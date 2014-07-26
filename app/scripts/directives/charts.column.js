@@ -155,8 +155,8 @@ angular.module('socCharts').directive('columnchart', function() {
                     x.domain(extent);
                 } else if (!run) {
                     x.domain(data.map(function(d) {
-                        console.log(d);
-                        console.log(scope.options.axis.x.label(d));
+                        /*console.log(d);
+                        console.log(scope.options.axis.x.label(d));*/
                         return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
                     }));
                 } else { 
