@@ -18,6 +18,8 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
 
+    grunt.loadNpmTasks('grunt-html2js');
+
     // configurable paths
     var yeomanConfig = {
         app: 'app',
@@ -242,26 +244,14 @@ module.exports = function(grunt) {
             //   }
             // }
         },
-        htmlmin: {
-            dist: {
-                options: {
-                    /*removeCommentsFromCDATA: true,
-          // https://github.com/yeoman/grunt-usemin/issues/44
-          //collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true*/
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>',
-                    src: ['*.html', 'views/*.html', 'views/**/*.html'],
-                    dest: '<%= yeoman.dist %>'
-                }]
-            }
+        html2js: {
+            options: {
+                base: 'views'
+            },
+            main: {
+                src: ['*.html', '**/*.html'],
+                dest: '<%= yeoman.dist %>/views/templates.js'
+            },
         },
         // Put files not handled in other tasks here
         copy: {
@@ -311,7 +301,7 @@ module.exports = function(grunt) {
                 'copy:styles',
                 'imagemin',
                 'svgmin',
-                'htmlmin'
+                'html2js'
             ]
         },
         karma: {
