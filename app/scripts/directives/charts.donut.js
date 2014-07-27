@@ -12,7 +12,7 @@ angular.module('socCharts')
             },
             link: function(scope, element, attrs) {
 
-                scope.loading = true;
+                //scope.loading = true;
 
                 scope.$watch("donutchart", function() {
                     scope.update();
