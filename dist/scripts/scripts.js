@@ -660,7 +660,11 @@ angular.module('socCharts').directive('columnchart', function() {
                             }];
                         }
 
-                        data[i].total = data[i].values[data[i].values.length - 1] && data[i].values[data[i].values.length - 1].y1 ? data[i].values[data[i].values.length - 1].y1 : 0;
+                        if (data[i].values.length && data[i].values[data[i].values.length - 1] && data[i].values[data[i].values.length - 1].y1) {
+                            data[i].total = data[i].values[data[i].values.length - 1].y1;
+                        } else {
+                            data[i].total = 0;
+                        }
                     });
                 }
 
