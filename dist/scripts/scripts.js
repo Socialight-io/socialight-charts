@@ -1,1 +1,1003 @@
-"use strict";var _SocChartsConfig={path:""};angular.module("socCharts",["ngAnimate","ngRoute","socCharts-templates"]).config(["$routeProvider",function(a){a.when("/",{templateUrl:"views/main.html",controller:"MainCtrl"}).otherwise({redirectTo:"/"})}]),angular.module("socCharts").controller("MainCtrl",["$scope",function(a){a.options={label:"label",stack:[{key:"v1",label:"Impressions",color:"rgba(0,0,255, .5)"},{key:"v2",label:"Comments",color:"rgba(0,255,0, .5)"},{key:"v3",label:"Likes",color:"rgba(255,0,0, .5)"}],height:400,legend:!0,axis:{x:{show:!0},y:{show:!1,label:"Traffic"}},sort:"desc"},a.donutOptions={label:"label",stack:{key:"v1",label:"Impressions",colors:["#666666","#CCCCCC"]},height:400,sort:"desc"},a.loading=!1,a.data=[{label:"1AM",v1:4,v2:3,v3:1,color:"#FF0000"},{label:"4PM",v1:2,v2:6,v3:7},{label:"6PM",v1:3,v2:4,v3:2,color:"#00FF00"},{label:"12PM",v1:8,v2:8,v3:1},{label:"8PM",v1:4,v2:8,v3:1},{label:"9AM",v1:9,v2:6,v3:1}],a.update=function(){a.loading=a.loading?!1:!0}}]),angular.module("socCharts").directive("barchart",function(){return{templateUrl:_SocChartsConfig.path+"views/charts/bar.html",restrict:"A",scope:{barchart:"=",options:"=",loading:"="},link:function(a,b){a.$watch("barchart",function(){a.create()},!0),a.$watch("options",function(){a.update()},!0),a.options=angular.extend({label:"label",stack:[{key:"v1",label:"Impressions",color:"#006699"},{key:"v2",label:"Comments",color:"#996600"},{key:"v3",label:"Likes",color:"#FF0099"}],height:400,legend:!0,chartLabel:!1,axis:{x:{show:!0},y:{show:!1,label:"Traffic"}},sort:"desc",limit:!1},a.options),$(window).on("resize",function(){a.update()}),a.create=function(){if(!a.barchart)return!1;b.height(a.options.height);var c=d3.selectAll(b),d={top:20,right:0,bottom:20,left:0};a.options.axis.y.show&&(d.left+=a.options.axis.y.width||100);var e=a.options.width||b.width();e=e-d.left-d.right;var f=a.options.height-d.top-d.bottom,g=d3.scale.ordinal().rangeRoundBands([0,f],.1),h=d3.scale.linear().rangeRound([e,0]),i=d3.svg.axis().scale(g).orient("left"),j=d3.svg.axis().scale(h).orient("bottom").tickFormat(d3.format(".2s"));c.selectAll(".chart").selectAll("svg").remove();var k=c.selectAll(".chart").append("svg").attr("width",e+d.left+d.right).attr("height",f+d.top+d.bottom).append("g").attr("transform","translate("+d.left+","+d.top+")"),l=angular.copy(a.barchart);if(l.forEach(function(b,c){var d=0;l[c]={label:"function"==typeof a.options.axis.y.label?a.options.axis.y.label(b):b[a.options.axis.y.label]},a.options.stack?a.options.stack.forEach(function(a){if(l[c].values=l[c].values||[],"function"==typeof a.key){var e={label:a.label,color:a.color};e.y0=d,e.y1=d+=a.key(b),l[c].values.push(e)}else if(b[a.key]){var e={label:a.label,color:a.color};e.y0=d,e.y1=d+=b[a.key],l[c].values.push(e)}}):l[c].values=[{label:"test",color:l.color||"black",y0:0,y1:b.value}],l[c].total=l[c].values[l[c].values.length-1].y1}),a.options.sort&&"function"==typeof a.options.sort?l=l.sort(a.options.sort):a.options.sort&&l.sort(function(b,c){return"desc"==a.options.sort?c.total-b.total:b.total-c.total}),a.options.limit&&(l=l.slice(0,a.options.limit)),g.domain(l.map(function(a){return a.label})),h.domain([d3.max(l,function(a){return a.total}),0]),a.options.axis.x.show&&k.append("g").attr("class","x axis").attr("transform","translate(0,"+f+")").call(j),a.options.axis.y.show){var m=k.append("g").attr("class","y axis").call(i).append("text").attr("transform","rotate(-90)").attr("y",6).attr("dy",".71em").style("text-anchor","end");a.options.axis.y.showLabel&&m.text(a.options.axis.y.label("Label"))}var n=k.selectAll(".state").data(l).enter().append("g").attr("class","g").attr("transform",function(a){return"translate(0,"+g(a.label)+")"});if(n.selectAll("rect").data(function(a){return a.values}).enter().append("rect").attr("height",g.rangeBand()).attr("x",function(a){return h(a.y0)}).attr("width",function(a){return h(a.y1)-h(a.y0)}).style("fill",function(a){return a.color}),a.options.legend){var o=k.selectAll(".legend").data(a.options.stack).enter().append("g").attr("class","legend").attr("transform",function(a,b){return"translate(-20,"+20*b+")"});o.append("rect").attr("x",e-18).attr("width",18).attr("height",18).style("fill",function(a){return a.color}),o.append("text").attr("x",e-24).attr("y",9).attr("dy",".35em").style("text-anchor","end").text(function(a){return a.label})}},a.update=function(){a.create()},a.create()}}}),angular.module("socCharts").directive("linechart",function(){return{templateUrl:_SocChartsConfig.path+"views/charts/line.html",restrict:"A",scope:{linechart:"=",options:"=",loading:"="},link:function(a,b){a.$watch("linechart",function(){a.data=a.linechart,a.create()},!0),a.$watch("options",function(){a.update()},!0),a.data=a.linechart,a.options=angular.extend({label:"label",stack:[{key:"v1",label:"Impressions",color:"#006699"},{key:"v2",label:"Comments",color:"#996600"},{key:"v3",label:"Likes",color:"#FF0099"}],height:400,legend:!0,offset:{left:0,top:0},width:void 0,axis:{x:{show:!0,label:"label"},y:{show:!1,label:"Traffic"}},date:function(){},mouseover:function(){},mouseout:function(){},click:function(){}},a.options),$(window).on("resize",function(){a.update()}),b.height(a.options.height),a.create=function(){var c=this,d="v0",e={top:20,right:0,bottom:30,left:0};a.options.axis.y.show&&(e.left+=0);var f=a.options.width||b.width();f=f-e.left-e.right;var g=a.options.height-e.top-e.bottom;if(a.options.timeseries)var h=d3.time.scale().range([0,f]);else var h=d3.scale.ordinal().rangePoints([0,f]);var i=d3.scale.linear().rangeRound([g,0]),j=d3.svg.axis().scale(h).orient(["bottom"]),k=d3.svg.axis().scale(i).orient("right").tickFormat(d3.format(".2s")),l=d3.svg.line().interpolate("cardinal").x(function(b){return h("function"==typeof a.options.axis.x.label?a.options.axis.x.label(b):b[a.options.axis.x.label])}).y(function(a){return i("function"==typeof d?d(a):a[d])}),m=d3.selectAll(b);m.selectAll(".chart").selectAll("svg").remove();var n=m.selectAll(".chart").append("svg").attr("width",f+e.left+e.right).attr("height",g+e.top+e.bottom).append("g").attr("transform","translate("+(e.left+a.options.offset.left)+","+(e.top+a.options.offset.top)+")"),o=[];if(o=angular.copy(a.data),a.options.sort&&"function"==typeof a.options.sort?o&&(o=o.sort(a.options.sort)):a.options.sort&&o.sort(function(b,c){return"desc"==a.options.sort?c.total-b.total:b.total-c.total}),h.domain(a.options.timeseries?a.options.extent?a.options.extent:d3.extent(o,function(b){return"function"==typeof a.options.axis.x.label?a.options.axis.x.label(b):b[a.options.axis.x.label]}):o.map(function(b){return"function"==typeof a.options.axis.x.label?a.options.axis.x.label(b):b[a.options.axis.x.label]})),o&&i.domain([0,d3.max(o,function(b){return b?d3.max(a.options.stack,function(a){return"function"==typeof a.key?a.key(b):b[a.key]}):void 0})]),a.options.axis.x.show&&n.append("g").attr("class","x axis").attr("transform","translate(0,"+g+")").call(j),a.options.axis.y.show&&n.append("g").attr("class","y axis").call(k).append("text").attr("transform","rotate(-90)").attr("y",20).attr("dy",".71em").style("text-anchor","end").text(a.options.axis.y.label),a.options&&a.options.stack&&a.options.stack.forEach(function(b){d=b.key,o&&(n.append("path").attr("class","line").attr("d",l(o)).style("fill","none").style("stroke",b.color).style("stroke-width",5),b.markers&&b.markers.show&&n.selectAll(".marker-"+b.label).data(o).enter().append("circle").attr("class","marker marker-"+b.label).attr("cx",function(b){return b?h("function"==typeof a.options.axis.x.label?a.options.axis.x.label(b):b[a.options.axis.x.label]):void 0}).attr("r",function(a){return a?7:void 0}).attr("cy",function(a){return a?i("function"==typeof b.key?b.key(a):a[b.key]):void 0}).style("stroke","white").style("fill",b.markers.color||"#999").style("stroke-width",3).on("mouseover",c.options.mouseover||function(){}).on("mouseout",c.options.mouseout||function(){}).on("click",c.options.click||function(){}))}),a.options.legend){var p=n.selectAll(".legend").data(a.options.stack).enter().append("g").attr("class","legend").attr("transform",function(a,b){return"translate(-20,"+20*b+")"});p.append("rect").attr("x",f-18).attr("width",18).attr("height",18).style("fill",function(a){return a.color}),p.append("text").attr("x",f-24).attr("y",9).attr("dy",".35em").style("text-anchor","end").text(function(a){return a.label})}},a.update=function(){a.create()},a.create()}}}),angular.module("socCharts").directive("columnchart",function(){return{templateUrl:_SocChartsConfig.path+"views/charts/bar.html",restrict:"A",scope:{columnchart:"=",options:"=",loading:"="},link:function(a,b){a.$watch("columnchart",function(){a.create()},!0),a.$watch("options",function(){a.update()},!0),a.create=function(){a.data=a.columnchart,a.options=angular.extend({label:"label",stack:[{key:"v1",label:"Impressions",color:"#006699"},{key:"v2",label:"Comments",color:"#996600"},{key:"v3",label:"Likes",color:"#FF0099"}],height:400,legend:!0,axis:{x:{show:!0},y:{show:!1,label:"Traffic"}}},a.options);var c=d3.selectAll(b),d={top:10,right:10,bottom:24,left:10},e=a.options.width||b.width();e=e-d.left-d.right;var f=a.options.height-d.top-d.bottom;if(a.options.timeseries){var g=d3.time.scale().range([0,e]);if(a.options.extent)var h=a.options.extent;else var h=d3.extent(a.columnchart,function(b){return a.options.axis.x.label(b)});h=d3.time.days(h[0],h[1]),h=e/h.length*.9}else var g=d3.scale.ordinal().rangeRoundBands([0,e],.1);var i=d3.scale.linear().rangeRound([f,0]),j=d3.svg.axis().ticks(4).scale(g).orient("bottom").ticks(4),k=d3.svg.axis().ticks(4).scale(i).orient("left").tickFormat(d3.format(".2"));c.selectAll(".chart").selectAll("svg").remove();var l=c.selectAll(".chart").append("svg").attr("width",e+d.left+d.right).attr("height",f+d.top+d.bottom).append("g").attr("transform","translate("+d.left+","+d.top+")"),m=c.append("div").attr("class","tip").style("display","none"),n=[];if(a.columnchart&&a.columnchart.forEach(function(b,c){var d=0;n[c]={label:"function"==typeof a.options.axis.x.label?a.options.axis.x.label(b):b[a.options.axis.x.label]},a.options.stack?a.options.stack.forEach(function(a){if(n[c].values=n[c].values||[],"function"==typeof a.key){var e={label:a.label,color:a.color};e.y0=d,e.y1=d+=a.key(b),e.options=a,e.data=b,n[c].values.push(e)}else if(b[a.key]){var e={label:a.label,color:a.color};e.y0=d,e.y1=d+=b[a.key],e.options=a,e.data=b,n[c].values.push(e)}}):n[c].values=[{label:n.label,color:n.color||"black",y0:0,y1:b.value,data:v}],n[c].total=n[c].values[n[c].values.length-1]&&n[c].values[n[c].values.length-1].y1?n[c].values[n[c].values.length-1].y1:0}),a.options.sort&&"function"==typeof a.options.sort?n=n.sort(a.options.sort):a.options.sort&&n.sort(function(b,c){return"desc"==a.options.sort?c.total-b.total:b.total-c.total}),a.options.timeseries){if(a.options.extent)var o=a.options.extent;else var o=d3.extent(n,function(b){return"function"==typeof a.options.axis.x.label?a.options.axis.x.label(b):b[a.options.axis.x.label]});g.domain(o)}else g.domain(n.map(p?function(a){return a.label}:function(b){return"function"==typeof a.options.axis.x.label?a.options.axis.x.label(b):b[a.options.axis.x.label]}));var p=1;i.domain([0,d3.max(n,function(a){return a.total})]),a.options.axis.x.show&&l.append("g").attr("class","x axis").attr("transform","translate(0,"+f+")").call(j),a.options.axis.y.show&&l.append("g").attr("class","y axis").call(k).append("text").attr("transform","rotate(-90)").attr("y",6).attr("dy",".71em").style("text-anchor","end").text(a.options.axis.y.label);var q=l.selectAll(".state").data(n).enter().append("g").attr("class","g").attr("transform",function(a){return"translate("+g(a.label)+",0)"});if(q.selectAll("rect").data(function(a){return a.values}).enter().append("rect").attr("width",a.options.timeseries?h:g.rangeBand()).attr("y",function(a){return i(a.y1)}).attr("class","over").attr("height",function(a){return i(a.y0)-i(a.y1)}).style("fill",function(a){return a.color}).on("click",function(b){a.options.click&&a.options.click(b)}).on("mouseover",function(b){var c=$(this).position();m.style("left",c.left+"px").style("top",c.top-40+"px").style("display","block").html(function(){return"function"==typeof a.options.tooltip?a.options.tooltip(b):b[a.options.tooltip]}).attr("font-family","sans-serif").attr("font-size","14px").attr("fill","red")}).on("mouseout",function(){m.style("display","none")}),a.options.legend){var r=l.selectAll(".legend").data(a.options.stack).enter().append("g").attr("class","legend").attr("transform",function(a,b){return"translate(0,"+20*b+")"});r.append("rect").attr("x",e-18).attr("width",18).attr("height",18).style("fill",function(a){return a.color}),r.append("text").attr("x",e-24).attr("y",9).attr("dy",".35em").style("text-anchor","end").text(function(a){return a.label})}},a.update=function(){a.create()},a.create()}}}),angular.module("socCharts").directive("donutchart",function(){return{templateUrl:_SocChartsConfig.path+"views/charts/donut.html",restrict:"A",scope:{donutchart:"=",options:"=",loading:"="},link:function(a,b){a.$watch("donutchart",function(){a.update()},!0),a.$watch("options",function(){a.update()},!0),$(window).on("resize",function(){a.update()});var c=d3.format(".2s");return a.create=function(){if(a.donutchart.length<=0)return!1;a.options=angular.extend({stack:{key:"v1",label:"Impressions",colors:["#0000FF","#006699"]},legend:!0,width:void 0,arcs:{main:{inner:.9,outer:1},text:{inner:.6,outer:1}},label:!0,mouseover:function(){},mouseout:function(){},click:function(){}},a.options);var d=d3.scale.linear().range(a.options.stack.colors);if(d.domain(d3.extent(a.donutchart,function(b){return b[a.options.stack.key]})),!a.donutchart||0==a.donutchart.length||!b.width())return!1;a.data=angular.copy(a.donutchart),a.width=a.options.width||b.width(),a.radius=a.options.height&&a.width>a.options.height?a.options.height/2:a.width/2,b.height(a.options.height?a.options.height:2*a.radius),a.arc=d3.svg.arc().innerRadius(a.radius*a.options.arcs.main.inner).outerRadius(a.radius*a.options.arcs.main.outer),a.textArc=d3.svg.arc().innerRadius(a.radius*a.options.arcs.text.inner).outerRadius(a.radius*a.options.arcs.text.outer),a.pie=d3.layout.pie().value(function(b){return b[a.options.stack.key]}).sort(null);var e=d3.selectAll(b);return e.selectAll(".chart").selectAll("svg").remove(),a.vis=e.selectAll(".chart").append("svg").data(a.data).attr("class","donut-chart").attr("width",a.options.width).attr("height",a.options.height||2*a.radius).append("svg:g").attr("transform","translate("+a.radius+","+a.radius+")"),a.options.label&&(a.vis.append("svg:text").attr("class","chart-label").attr("text-anchor","middle").attr("transform","translate(0,"+Math.round(a.radius/10)+")").style("font-size",Math.round(a.radius/2.5)+"px").text(c(d3.sum(a.data,function(b){return b[a.options.stack.key]}))),a.vis.append("svg:text").attr("class","chart-sub-label").attr("text-anchor","middle").attr("transform","translate(0,"+.3*a.radius+")").style("font-size",Math.round(.15*a.options.radius)).text(a.options.stack.label)),a.data.length&&(a.arcs=a.vis.selectAll("g.slice").data(a.pie(a.data)).enter().append("svg:g").attr("class","slice"),a.arcs.append("svg:path").attr("class",function(a){return a.data.label}).attr("fill",function(b){return angular.isFunction(a.options.stack.colors)?a.options.stack.colors(b):d(b.value)}).style("opacity",.7).attr("d",a.textArc).each(function(b){a._current=b}),a.arcs.append("svg:path").attr("class",function(a){return a.data.label}).attr("fill",function(b){return angular.isFunction(a.options.stack.colors)?a.options.stack.colors(b):d(b.value)}).style("opacity","1").attr("d",a.arc).each(function(b){a._current=b}).on("click",a.options.click||function(a){console.log(a)})),a.arcs.append("svg:text").attr("class","hover-show").attr("text-anchor","middle").attr("transform",function(b){var c=a.textArc.centroid(b);return"translate("+c+")"}).style("font-size",Math.round(a.radius/6.5)+"px").style("font-weight","bold").style("fill","white").text(function(b){return c(b.data[a.options.stack.key])}),a.arcs.append("svg:text").attr("class","small-text hover-show").attr("text-anchor","middle").attr("transform",function(b){var c=a.textArc.centroid(b);return c[1]=c[1]+.16*a.radius,"translate("+c+")"}).style("font-size",Math.round(a.radius/10)+"px").style("fill","white").text(function(a){return a.data.label}),this},a.update=function(){a.create()},a.create()}}}),angular.module("socCharts").directive("posts",function(){return{templateUrl:_SocChartsConfig.path+"views/charts/posts.html",restrict:"A",scope:{posts:"=",options:"=",loading:"="},link:function(a){a.fixPic=function(a){return a?a.replace("50.50","200.200").replace("50x50","200x200"):null}}}}),angular.module("socCharts-templates",[]);
+'use strict';
+
+var _SocChartsConfig = {
+    path: ""
+};
+
+angular.module('socCharts', ['ngAnimate', 'ngRoute', 'socCharts-templates'])
+    .config(function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    });
+'use strict';
+
+angular.module('socCharts')
+    .controller('MainCtrl', function($scope) {
+
+        $scope.options = {
+            label: "label",
+            stack: [{
+                key: "v1",
+                label: "Impressions",
+                color: "rgba(0,0,255, .5)"
+            }, {
+                key: "v2",
+                label: "Comments",
+                color: "rgba(0,255,0, .5)"
+            }, {
+                key: "v3",
+                label: "Likes",
+                color: "rgba(255,0,0, .5)"
+            }],
+            height: 400,
+            legend: true,
+            axis: {
+                x: {
+                    show: true
+                },
+                y: {
+                    show: false,
+                    label: "Traffic"
+                }
+            },
+            sort: "desc"
+        };
+
+        $scope.donutOptions = {
+            label: "label",
+            stack: {
+                key: "v1",
+                label: "Impressions",
+                colors: ["#666666", "#CCCCCC"]
+            },
+            height: 400,
+            sort: "desc"
+        };
+
+        $scope.loading = false;
+
+        $scope.data = [{
+            label: "1AM",
+            v1: 4,
+            v2: 3,
+            v3: 1,
+            color: "#FF0000"
+        }, {
+            label: "4PM",
+            v1: 2,
+            v2: 6,
+            v3: 7
+        }, {
+            label: "6PM",
+            v1: 3,
+            v2: 4,
+            v3: 2,
+            color: "#00FF00"
+        }, {
+            label: "12PM",
+            v1: 8,
+            v2: 8,
+            v3: 1
+        }, {
+            label: "8PM",
+            v1: 4,
+            v2: 8,
+            v3: 1
+        }, {
+            label: "9AM",
+            v1: 9,
+            v2: 6,
+            v3: 1
+        }];
+
+        $scope.update = function() {
+            $scope.loading = $scope.loading ? false : true;
+        }
+    });
+'use strict';
+
+angular.module('socCharts')
+  .directive('barchart', function () {
+    return {
+      templateUrl: _SocChartsConfig.path+'views/charts/bar.html',
+      restrict: 'A',
+      scope: {
+	  	'barchart': '=',
+	  	'options': '=',
+	  	'loading': '='  
+      },
+      link: function (scope, element, attrs) {
+		  
+		scope.$watch("barchart", function () { 
+			scope.create();
+		}, true);
+
+		scope.$watch("options", function () { 
+			scope.update();
+		}, true);
+		
+		scope.options = angular.extend({ 
+			label: "label",
+			stack: [
+				{ 
+					key: "v1",
+					label: "Impressions",
+					color: "#006699"
+				}, {
+					key: "v2",
+					label: "Comments",
+					color: "#996600"
+				}, {
+					key: "v3",
+					label: "Likes",
+					color: "#FF0099"
+				}
+			], 
+			height: 400,
+			legend: true,
+			chartLabel: false,
+			axis: {
+				x: {
+					show: true
+				},
+				y: {
+					show: false,
+					label: "Traffic"
+				}
+			},
+			sort: "desc",
+			limit: false
+		}, scope.options);
+		
+        $(window).on("resize", function () { 
+	    	scope.update();
+        });
+		
+		scope.create = function () { 
+
+			if (!scope.barchart) { return false; }
+			
+		  	var self = this;
+		  
+			element.height(scope.options.height);
+	
+			var container = d3.selectAll(element);
+			
+			var margin = {top: 20, right: 0, bottom: 20, left: 0};
+			
+			// Legend fix
+			if (scope.options.axis.y.show) { margin.left += scope.options.axis.y.width || 100; };
+			
+			var width = scope.options.width || element.width();
+			
+			width = width - margin.left - margin.right;
+			var height = scope.options.height - margin.top - margin.bottom;
+			
+			var y = d3.scale.ordinal()
+			    .rangeRoundBands([0, height], .1);
+			
+			var x = d3.scale.linear()
+			    .rangeRound([width, 0]);
+			
+			var yAxis = d3.svg.axis()
+			    .scale(y)
+			    .orient("left");
+			
+			var xAxis = d3.svg.axis()
+			    .scale(x)
+			    .orient("bottom")
+			    .tickFormat(d3.format(".2s"));
+			
+		  container.selectAll(".chart").selectAll("svg").remove();
+
+		  var svg = container.selectAll(".chart").append("svg")
+			    .attr("width", width + margin.left + margin.right)
+			    .attr("height", height + margin.top + margin.bottom)
+			  .append("g")
+			    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+			
+		  var data = angular.copy(scope.barchart);
+		  var y0 = 0;
+		  		  			
+		  data.forEach(function(d, i) {
+		  
+		    var y0 = 0;
+			data[i] = {
+				label: typeof(scope.options.axis.y.label) == "function" ? scope.options.axis.y.label(d) : d[scope.options.axis.y.label]
+			};
+			
+			if (scope.options.stack) { 
+			    scope.options.stack.forEach(function (v) { 
+			    	data[i].values = data[i].values || [];
+			    	
+				    if (typeof(v.key) == "function") { 
+				    	var value = {
+					    	label: v.label,
+					    	color: v.color
+				    	};
+				    	value.y0 = y0;
+				    	value.y1 = y0 += v.key(d);
+					    data[i].values.push(value);
+				    } else if (d[v.key]) { 
+				    	var value = {
+					    	label: v.label,
+					    	color: v.color
+				    	};
+				    	value.y0 = y0;
+				    	value.y1 = y0 += d[v.key];
+					    data[i].values.push(value);					    
+				    }
+			    });
+		    } else { 
+			    data[i].values = [{
+				    label: "test",
+				    color: data.color || "black",
+				    y0: 0,
+				    y1: d.value
+			    }];
+		    }
+			
+		    data[i].total = data[i].values[data[i].values.length - 1].y1;
+		    
+		  });
+		  
+		  if (scope.options.sort && typeof(scope.options.sort) == "function") {
+		  	data = data.sort(scope.options.sort);
+		  } else if (scope.options.sort) { 
+		  	data.sort(function(a, b) { 
+		  		if (scope.options.sort == "desc") { 
+		  			return b.total - a.total; 
+		  		} else { 
+			  		return a.total - b.total;
+		  		}
+		  	});
+		  }
+
+		  if (scope.options.limit) { 
+		  	data = data.slice(0, scope.options.limit);
+		  }
+		  
+		  y.domain(data.map(function(d) { return d.label; }));	
+		  x.domain([d3.max(data, function(d) { return d.total; }), 0]);
+		  
+		  if (scope.options.axis.x.show) {
+			  svg.append("g")
+			      .attr("class", "x axis")
+			      .attr("transform", "translate(0," + height + ")")
+			      .call(xAxis);
+		 }
+		 
+		 if (scope.options.axis.y.show) { 
+			 var yaxis = svg.append("g")
+			      .attr("class", "y axis")
+			      .call(yAxis)
+			    .append("text")
+			      .attr("transform", "rotate(-90)")
+			      .attr("y", 6)
+			      .attr("dy", ".71em")
+			      .style("text-anchor", "end");
+			      if (scope.options.axis.y.showLabel) { 
+			      	yaxis.text(scope.options.axis.y.label("Label"));
+			      }
+		 }
+		
+		  var bar = svg.selectAll(".state")
+		      .data(data)
+		    .enter().append("g")
+		      .attr("class", "g")
+		      .attr("transform", function(d) { return "translate(0," + y(d.label) + ")"; });
+		
+		  bar.selectAll("rect")
+		      .data(function(d) { return d.values; })
+		    .enter().append("rect")
+		      .attr("height", y.rangeBand())
+		      .attr("x", function(d) { return x(d.y0); })
+		      .attr("width", function(d) { return x(d.y1) - x(d.y0); })
+		      .style("fill", function(d) { return d.color; });
+		
+		  if (scope.options.legend) { 
+			  var legend = svg.selectAll(".legend")
+			      .data(scope.options.stack)
+			    .enter().append("g")
+			      .attr("class", "legend")
+			      .attr("transform", function(d, i) { return "translate(-20," + i * 20 + ")"; });
+			
+			  legend.append("rect")
+			      .attr("x", width - 18)
+			      .attr("width", 18)
+			      .attr("height", 18)
+			      .style("fill", function (d) { return d.color; });
+			
+			  legend.append("text")
+			      .attr("x", width - 24)
+			      .attr("y", 9)
+			      .attr("dy", ".35em")
+			      .style("text-anchor", "end")
+			      .text(function(d) { return d.label; });
+		  }
+		};
+		
+		scope.update = function () { 
+			scope.create();
+		}
+
+		scope.create();
+		
+      }
+    };
+  });
+
+angular.module('socCharts').directive('linechart', function() {
+    return {
+        templateUrl: _SocChartsConfig.path + 'views/charts/line.html',
+        restrict: 'A',
+        scope: {
+            'linechart': '=',
+            'options': '=',
+            'loading': '='
+        },
+        link: function(scope, element, attrs) {
+
+            scope.$watch("linechart", function() {
+                scope.data = scope.linechart;
+                scope.create();
+            }, true);
+
+            scope.$watch("options", function() {
+                scope.update();
+            }, true);
+
+            scope.data = scope.linechart;
+
+            scope.options = angular.extend({
+                label: "label",
+                stack: [{
+                    key: "v1",
+                    label: "Impressions",
+                    color: "#006699"
+                }, {
+                    key: "v2",
+                    label: "Comments",
+                    color: "#996600"
+                }, {
+                    key: "v3",
+                    label: "Likes",
+                    color: "#FF0099"
+                }],
+                height: 400,
+                legend: true,
+                offset: { left: 0, top: 0 },
+                width: undefined,
+                axis: {
+                    x: {
+                        show: true,
+                        label: "label"
+                    },
+                    y: {
+                        show: false,
+                        label: "Traffic"
+                    }
+                },
+                date: function() {},
+                mouseover: function() {},
+                mouseout: function() {},
+                click: function() {}
+            }, scope.options);
+
+            $(window).on("resize", function() {
+                scope.update();
+            });
+
+            element.height(scope.options.height);
+
+            scope.create = function() {
+
+                var self = this, featured = "v0";
+
+                var margin = {
+                    top: 20,
+                    right: 0,
+                    bottom: 30,
+                    left: 0
+                };
+
+                if (scope.options.axis.y.show) {
+                    margin.left += 0;
+                };
+                
+                var width = scope.options.width || element.width();
+                width = width - margin.left - margin.right;
+                var height = scope.options.height - margin.top - margin.bottom;
+
+                /* Calculate widths and heights */
+                if (scope.options.timeseries) { var x = d3.time.scale().range([0, width]); } 
+                else { var x = d3.scale.ordinal().rangePoints([0, width]); }
+
+                var y = d3.scale.linear().rangeRound([height, 0]);
+                var xAxis = d3.svg.axis().scale(x).orient(["bottom"]);
+                var yAxis = d3.svg.axis().scale(y).orient("right").tickFormat(d3.format(".2s"));
+
+                var line = d3.svg.line().interpolate("cardinal").x(function(d) {
+                    return x(typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label]);
+                }).y(function(d) {
+                    return y(typeof(featured) == "function" ? featured(d) : d[featured]);
+                });
+
+                var container = d3.selectAll(element);
+                container.selectAll(".chart").selectAll("svg").remove();
+                var svg = container.selectAll(".chart").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + (margin.left + scope.options.offset.left) + "," + (margin.top + scope.options.offset.top) + ")");
+                
+                var data = [];
+                data = angular.copy(scope.data);
+
+                if (scope.options.sort && typeof(scope.options.sort) == "function") {
+                    if (data) { 
+                        data = data.sort(scope.options.sort);
+                    }   
+                } else if (scope.options.sort) {
+                    data.sort(function(a, b) {
+                        if (scope.options.sort == "desc") {
+                            return b.total - a.total;
+                        } else {
+                            return a.total - b.total;
+                        }
+                    });
+                }
+
+                if (scope.options.timeseries) {
+                	if (scope.options.extent) { 
+                		x.domain(scope.options.extent);
+                	} else {
+	                    x.domain(d3.extent(data, function(d) {
+	                        return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
+	                    }));
+                	}
+                } else {
+                    x.domain(data.map(function(d) {
+                        return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
+                    }));
+                }
+
+                if (data) { 
+                    y.domain([0, d3.max(data, function(d) {
+                        if (d) { 
+                            return d3.max(scope.options.stack, function(si) {
+                                if (typeof(si.key) == "function") {
+                                    return si.key(d);
+                                } else {
+                                    return d[si.key];
+                                }
+                            });
+                        }
+                    })]);
+                }
+
+                if (scope.options.axis.x.show) {
+                    svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
+                }
+
+                if (scope.options.axis.y.show) {
+                    svg.append("g").attr("class", "y axis").call(yAxis).append("text").attr("transform", "rotate(-90)").attr("y", 20).attr("dy", ".71em").style("text-anchor", "end").text(scope.options.axis.y.label);
+                }
+
+                if (scope.options && scope.options.stack) { 
+                    scope.options.stack.forEach(function(l) {
+                        featured = l.key;
+                        
+                        if (data) { 
+                            svg.append("path").attr("class", "line").attr("d", line(data)).style("fill", "none").style("stroke", l.color).style("stroke-width", 5);
+                            if (l.markers && l.markers.show) {
+                                svg.selectAll(".marker-" + l.label).data(data).enter().append("circle").attr("class", "marker marker-" + l.label).attr("cx", function(d, i) {
+                                    if (d) {
+                                        return x(typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label]);
+                                    }
+                                }).attr("r", function(d, i) {
+                                    if (d) {
+                                        return 7;
+                                    }
+                                }).attr("cy", function(d, i) {
+                                    if (d) {
+                                        return y(typeof(l.key) == "function" ? l.key(d) : d[l.key]);
+                                    }
+                                }).style("stroke", "white").style("fill", l.markers.color || "#999").style("stroke-width", 3).on("mouseover", self.options.mouseover || function() {}).on("mouseout", self.options.mouseout || function() {}).on("click", self.options.click || function() {});
+                            }
+                        }
+                    });
+                }
+
+                if (scope.options.legend) {
+                    var legend = svg.selectAll(".legend").data(scope.options.stack).enter().append("g").attr("class", "legend").attr("transform", function(d, i) {
+                        return "translate(-20," + i * 20 + ")";
+                    });
+                    legend.append("rect").attr("x", width - 18).attr("width", 18).attr("height", 18).style("fill", function(d) {
+                        return d.color;
+                    });
+                    legend.append("text").attr("x", width - 24).attr("y", 9).attr("dy", ".35em").style("text-anchor", "end").text(function(d) {
+                        return d.label;
+                    });
+                }
+            };
+            scope.update = function() {
+                scope.create();
+            }
+            scope.create();
+        }
+    };
+});
+'use strict';
+angular.module('socCharts').directive('columnchart', function() {
+    return {
+        templateUrl: _SocChartsConfig.path + 'views/charts/bar.html',
+        restrict: 'A',
+        scope: {
+            'columnchart': '=',
+            'options': '=',
+            'loading': '='
+        },
+        link: function(scope, element, attrs) {
+            scope.$watch("columnchart", function() {
+                scope.create();
+            }, true);
+            
+            scope.$watch("options", function() {
+                scope.update();
+            }, true);
+
+            scope.create = function() {
+                scope.data = scope.columnchart;
+                scope.options = angular.extend({
+                    label: "label",
+                    stack: [{
+                        key: "v1",
+                        label: "Impressions",
+                        color: "#006699"
+                    }, {
+                        key: "v2",
+                        label: "Comments",
+                        color: "#996600"
+                    }, {
+                        key: "v3",
+                        label: "Likes",
+                        color: "#FF0099"
+                    }],
+                    height: 400,
+                    legend: true,
+                    axis: {
+                        x: {
+                            show: true
+                        },
+                        y: {
+                            show: false,
+                            label: "Traffic"
+                        }
+                    }
+                }, scope.options);
+
+                var self = this;
+                var container = d3.selectAll(element);
+                var margin = {
+                    top: 10,
+                    right: 10,
+                    bottom: 24,
+                    left: 10
+                };
+
+                var width = scope.options.width || element.width();
+                width = width - margin.left - margin.right;
+                var height = scope.options.height - margin.top - margin.bottom;
+
+                if (scope.options.timeseries) {
+                    var x = d3.time.scale().range([0, width]);
+                    if (scope.options.extent) {
+                        var barWidth = scope.options.extent;
+                    } else {
+                        var barWidth = d3.extent(scope.columnchart, function(d) {
+                            return scope.options.axis.x.label(d);
+                        });
+                    }
+                    barWidth = d3.time.days(barWidth[0], barWidth[1]);
+                    barWidth = (width / barWidth.length) * .9;
+                } else {
+                    var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
+                }
+
+                var y = d3.scale.linear().rangeRound([height, 0]);
+                var xAxis = d3.svg.axis().ticks(4).scale(x).orient("bottom").ticks(4);
+                var yAxis = d3.svg.axis().ticks(4).scale(y).orient("left").tickFormat(d3.format(".2"));
+                container.selectAll(".chart").selectAll("svg").remove();
+                var svg = container.selectAll(".chart").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                var tooltip = container.append("div")
+                    .attr("class", "tip")
+                    .style("display", "none");
+
+                var data = [];
+
+                if (scope.columnchart) { 
+                    scope.columnchart.forEach(function(d, i) {
+
+                        var y0 = 0;
+                        data[i] = {
+                            label: typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label]
+                        };
+                        if (scope.options.stack) {
+                            scope.options.stack.forEach(function(v) {
+                                data[i].values = data[i].values || [];
+                                if (typeof(v.key) == "function") {
+                                    var value = {
+                                        label: v.label,
+                                        color: v.color
+                                    };
+                                    value.y0 = y0;
+                                    value.y1 = y0 += v.key(d);
+                                    value.options = v;
+                                    value.data = d;
+                                    data[i].values.push(value);
+                                } else if (d[v.key]) {
+                                    var value = {
+                                        label: v.label,
+                                        color: v.color
+                                    };
+                                    value.y0 = y0;
+                                    value.y1 = y0 += d[v.key];
+                                    value.options = v;
+                                    value.data = d;
+                                    data[i].values.push(value);
+                                }
+                            });
+                        } else {
+                            data[i].values = [{
+                                label: data.label,
+                                color: data.color || "black",
+                                y0: 0,
+                                y1: d.value,
+                                data: v
+                            }];
+                        }
+
+                        data[i].total = data[i].values[data[i].values.length - 1] && data[i].values[data[i].values.length - 1].y1 ? data[i].values[data[i].values.length - 1].y1 : 0;
+                    });
+                }
+
+                if (scope.options.sort && typeof(scope.options.sort) == "function") {
+                    data = data.sort(scope.options.sort);
+                } else if (scope.options.sort) {
+                    data.sort(function(a, b) {
+                        if (scope.options.sort == "desc") {
+                            return b.total - a.total;
+                        } else {
+                            return a.total - b.total;
+                        }
+                    });
+                }
+
+                if (scope.options.timeseries) {
+                    if (scope.options.extent) {
+                        var extent = scope.options.extent;
+                    } else {
+                        var extent = d3.extent(data, function(d) {
+                            return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
+                        });
+                    }
+                    x.domain(extent);
+                } else if (!run) {
+                    x.domain(data.map(function(d) {
+                        /*console.log(d);
+                        console.log(scope.options.axis.x.label(d));*/
+                        return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
+                    }));
+                } else { 
+                    x.domain(data.map(function(d) { return d.label; }));
+                }
+
+                var run = 1;
+
+                /* console.log(x.domain()); */
+                y.domain([0, d3.max(data, function(d) {
+                    return d.total;
+                })]);
+
+                if (scope.options.axis.x.show) {
+                    svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
+                }
+                if (scope.options.axis.y.show) {
+                    svg.append("g").attr("class", "y axis").call(yAxis).append("text").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", ".71em").style("text-anchor", "end").text(scope.options.axis.y.label);
+                }
+                var bar = svg.selectAll(".state").data(data).enter().append("g").attr("class", "g").attr("transform", function(d) {
+                    return "translate(" + x(d.label) + ",0)";
+                });
+
+                bar.selectAll("rect").data(function(d) {
+                    return d.values;
+                }).enter().append("rect").attr("width", scope.options.timeseries ? barWidth : x.rangeBand()).attr("y", function(d) {
+                    return y(d.y1);
+                }).attr("class", "over").attr("height", function(d) {
+                    return y(d.y0) - y(d.y1);
+                }).style("fill", function(d) {
+                    return d.color;
+                }).on("click", function(d, i) {
+                    if (scope.options.click) { 
+                        scope.options.click(d);
+                    }
+                }).on("mouseover", function(ob, i, el) {
+                    var pos = $(this).position();
+
+                    tooltip.style("left", pos.left+"px")
+                        .style("top", (pos.top-40)+"px")
+                        .style("display", "block")
+                        .html( function (d) { return typeof(scope.options.tooltip) == "function" ? scope.options.tooltip(ob) : ob[scope.options.tooltip]; })
+                        .attr("font-family", "sans-serif")
+                        .attr("font-size", "14px")
+                        .attr("fill", "red");
+                }).on("mouseout", function(d, i, el) {
+                    tooltip.style("display", "none")
+                });
+
+                if (scope.options.legend) {
+                    var legend = svg.selectAll(".legend").data(scope.options.stack).enter().append("g").attr("class", "legend").attr("transform", function(d, i) {
+                        return "translate(0," + i * 20 + ")";
+                    });
+                    legend.append("rect").attr("x", width - 18).attr("width", 18).attr("height", 18).style("fill", function(d) {
+                        return d.color;
+                    });
+                    legend.append("text").attr("x", width - 24).attr("y", 9).attr("dy", ".35em").style("text-anchor", "end").text(function(d) {
+                        return d.label;
+                    });
+                }
+            };
+            scope.update = function() {
+                scope.create();
+            }
+            scope.create();
+        }
+    };
+});
+'use strict';
+
+angular.module('socCharts')
+    .directive('donutchart', function() {
+        return {
+            templateUrl: _SocChartsConfig.path + 'views/charts/donut.html',
+            restrict: 'A',
+            scope: {
+                'donutchart': '=',
+                'options': '=',
+                'loading': '='
+            },
+            link: function(scope, element, attrs) {
+
+                //scope.loading = true;
+
+                scope.$watch("donutchart", function() {
+                    scope.update();
+                }, true);
+
+                scope.$watch("options", function() {
+                    scope.update();
+                }, true);
+
+                $(window).on("resize", function() {
+                    scope.update();
+                });
+
+                var si = d3.format('.2s');
+
+                scope.create = function() {
+
+                    if (scope.donutchart.length <= 0) {
+                        return false;
+                    }
+
+                    scope.options = angular.extend({
+                        stack: {
+                            key: "v1",
+                            label: "Impressions",
+                            colors: ["#0000FF", "#006699"],
+                        },
+                        legend: true,
+                        width: undefined,
+                        arcs: {
+                            main: {
+                                inner: .9,
+                                outer: 1
+                            },
+                            text: {
+                                inner: .6,
+                                outer: 1
+                            }
+                        },
+                        label: true,
+                        mouseover: function() {},
+                        mouseout: function() {},
+                        click: function() {}
+                    }, scope.options);
+
+                    var colors = d3.scale.linear().range(scope.options.stack.colors);
+
+                    colors.domain(d3.extent(scope.donutchart, function(v) {
+                        return v[scope.options.stack.key];
+                    }));
+
+                    if (!scope.donutchart || scope.donutchart.length == 0 || !element.width()) {
+                        return false;
+                    }
+
+                    scope.data = angular.copy(scope.donutchart);
+
+                    scope.width = scope.options.width || element.width();
+
+                    if (scope.options.height && scope.width > scope.options.height) {
+                        scope.radius = scope.options.height / 2;
+                    } else {
+                        scope.radius = scope.width / 2;
+                    }
+
+                    if (scope.options.height) {
+                        element.height(scope.options.height);
+                    } else {
+                        element.height(scope.radius * 2);
+                    }
+
+                    scope.arc = d3.svg.arc()
+                        .innerRadius(scope.radius * scope.options.arcs.main.inner)
+                        .outerRadius(scope.radius * scope.options.arcs.main.outer);
+
+                    scope.textArc = d3.svg.arc()
+                        .innerRadius(scope.radius * scope.options.arcs.text.inner)
+                        .outerRadius(scope.radius * scope.options.arcs.text.outer);
+
+                    scope.pie = d3.layout.pie()
+                        .value(function(d) {
+                            return d[scope.options.stack.key];
+                        }).sort(null);
+
+                    var g = function(arr) {
+                        return d3.max(arr, function(d) {
+                            return d[scope.options.stack.key];
+                        });
+                    };
+
+                    var container = d3.selectAll(element);
+                    container.selectAll(".chart").selectAll("svg").remove();
+
+                    scope.vis = container.selectAll(".chart")
+                        .append("svg")
+                        .data(scope.data)
+                        .attr("class", "donut-chart")
+                        .attr("width", scope.options.width)
+                        .attr("height", scope.options.height || scope.radius * 2)
+                        .append("svg:g")
+                        .attr("transform", "translate(" + scope.radius + "," + scope.radius + ")");
+
+                    if (scope.options.label) {
+
+                        scope.vis.append("svg:text")
+                            .attr("class", "chart-label")
+                            .attr("text-anchor", "middle") //center the text on it's origin
+                        .attr("transform", "translate(0," + Math.round(scope.radius / 10) + ")")
+                            .style("font-size", Math.round(scope.radius / 2.5) + "px")
+                            .text(si(d3.sum(scope.data, function(d) {
+                                return d[scope.options.stack.key];
+                            })));
+
+                        scope.vis.append("svg:text")
+                            .attr("class", "chart-sub-label")
+                            .attr("text-anchor", "middle") //center the text on it's origin
+                        .attr("transform", "translate(0," + (scope.radius * .3) + ")")
+                            .style("font-size", Math.round(scope.options.radius * .15))
+                            .text(scope.options.stack.label);
+                    }
+
+                    if (scope.data.length) {
+
+                        scope.arcs = scope.vis.selectAll("g.slice")
+                            .data(scope.pie(scope.data))
+                            .enter()
+                            .append("svg:g")
+                            .attr("class", "slice");
+
+                        scope.arcs.append("svg:path")
+                            .attr("class", function(d) {
+                                return d.data.label;
+                            })
+                            .attr("fill", function(d, i) {
+                                if (angular.isFunction(scope.options.stack.colors)) {
+                                    return scope.options.stack.colors(d);
+                                } else {
+                                    return colors(d.value);
+                                }
+                            })
+                            .style("opacity", .7)
+                            .attr("d", scope.textArc)
+                            .each(function(d) {
+                                scope._current = d;
+                            });
+
+                        scope.arcs.append("svg:path")
+                            .attr("class", function(d) {
+                                return d.data.label;
+                            })
+                            .attr("fill", function(d, i) {
+                                if (angular.isFunction(scope.options.stack.colors)) {
+                                    return scope.options.stack.colors(d);
+                                } else {
+                                    return colors(d.value);
+                                }
+                            })
+                            .style("opacity", "1")
+                            .attr("d", scope.arc)
+                            .each(function(d) {
+                                scope._current = d;
+                            })
+                            .on("click", scope.options.click || function(d) {
+                                console.log(d);
+                            });
+                    }
+
+                    scope.arcs.append("svg:text")
+                        .attr("class", "hover-show")
+                        .attr("text-anchor", "middle") // center the text on it's origin
+                    .attr("transform", function(d) {
+                        var cent = scope.textArc.centroid(d);
+                        return "translate(" + cent + ")";
+                    })
+                        .style("font-size", Math.round(scope.radius / 6.5) + "px")
+                        .style("font-weight", "bold")
+                        .style("fill", "white")
+                        .text(function(d, i) {
+                            return si(d.data[scope.options.stack.key]);
+                        });
+
+                    scope.arcs.append("svg:text")
+                        .attr("class", "small-text hover-show")
+                        .attr("text-anchor", "middle")
+                        .attr("transform", function(d) {
+                            var cent = scope.textArc.centroid(d);
+                            cent[1] = cent[1] + (scope.radius * .16);
+                            return "translate(" + cent + ")";
+                        })
+                        .style("font-size", Math.round(scope.radius / 10) + "px")
+                        .style("fill", "white")
+                        .text(function(d, i) {
+                            return d.data.label;
+                        });
+                    return this;
+                };
+
+                scope.update = function() {
+                    scope.create();
+                }
+
+                return scope.create();
+
+            }
+        };
+    });
+'use strict';
+
+angular.module('socCharts')
+	.directive('posts', function () {
+		return {
+			templateUrl: _SocChartsConfig.path+'views/charts/posts.html',
+			restrict: 'A',
+			scope: {
+			'posts': '=',
+			'options': '=',
+			'loading': '='
+			},
+			link: function postLink(scope, element, attrs) {				
+				scope.fixPic = function (url) { 
+					if (url) { 
+						return url.replace("50.50", "200.200").replace("50x50", "200x200");
+					} else { return null; }
+				}
+			}
+		};
+	});
+
+angular.module('socCharts-templates', []);
