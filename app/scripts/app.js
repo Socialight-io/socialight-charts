@@ -4,7 +4,7 @@ var _SocChartsConfig = {
     path: ""
 };
 
-angular.module('socCharts', ["ngAnimate", "ngRoute"])
+angular.module('socCharts', ['ngAnimate', 'ngRoute', 'socCharts-templates'])
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
