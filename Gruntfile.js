@@ -246,7 +246,11 @@ module.exports = function(grunt) {
         },
         html2js: {
             options: {
-                base: 'views'
+                base: 'views',
+                module: 'socCharts-templates',
+                rename: function(moduleName) {
+                    return moduleName.replace('../app/', '');
+                }
             },
             main: {
                 src: ['*.html', '**/*.html'],

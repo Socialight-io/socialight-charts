@@ -1,7 +1,7 @@
-angular.module('templates-main', ['../app/404.html', '../app/bower_components/bootstrap-sass/docs/base-css.html', '../app/bower_components/bootstrap-sass/docs/components.html', '../app/bower_components/bootstrap-sass/docs/customize.html', '../app/bower_components/bootstrap-sass/docs/examples/carousel.html', '../app/bower_components/bootstrap-sass/docs/examples/fluid.html', '../app/bower_components/bootstrap-sass/docs/examples/hero.html', '../app/bower_components/bootstrap-sass/docs/examples/justified-nav.html', '../app/bower_components/bootstrap-sass/docs/examples/marketing-narrow.html', '../app/bower_components/bootstrap-sass/docs/examples/signin.html', '../app/bower_components/bootstrap-sass/docs/examples/starter-template.html', '../app/bower_components/bootstrap-sass/docs/examples/sticky-footer-navbar.html', '../app/bower_components/bootstrap-sass/docs/examples/sticky-footer.html', '../app/bower_components/bootstrap-sass/docs/extend.html', '../app/bower_components/bootstrap-sass/docs/getting-started.html', '../app/bower_components/bootstrap-sass/docs/index.html', '../app/bower_components/bootstrap-sass/docs/javascript.html', '../app/bower_components/bootstrap-sass/docs/scaffolding.html', '../app/bower_components/bootstrap-sass/js/tests/index.html', '../app/bower_components/es5-shim/tests/index.html', '../app/bower_components/es5-shim/tests/index.min.html', '../app/bower_components/jquery/speed/closest.html', '../app/bower_components/jquery/speed/css.html', '../app/bower_components/jquery/speed/event.html', '../app/bower_components/jquery/speed/filter.html', '../app/bower_components/jquery/speed/find.html', '../app/bower_components/jquery/speed/index.html', '../app/bower_components/jquery/speed/slice.vs.concat.html', '../app/bower_components/jquery/test/data/ajax/unreleasedXHR.html', '../app/bower_components/jquery/test/data/cleanScript.html', '../app/bower_components/jquery/test/data/core/cc_on.html', '../app/bower_components/jquery/test/data/dimensions/documentLarge.html', '../app/bower_components/jquery/test/data/dimensions/documentSmall.html', '../app/bower_components/jquery/test/data/event/promiseReady.html', '../app/bower_components/jquery/test/data/event/syncReady.html', '../app/bower_components/jquery/test/data/iframe.html', '../app/bower_components/jquery/test/data/manipulation/iframe-denied.html', '../app/bower_components/jquery/test/data/name.html', '../app/bower_components/jquery/test/data/offset/absolute.html', '../app/bower_components/jquery/test/data/offset/body.html', '../app/bower_components/jquery/test/data/offset/fixed.html', '../app/bower_components/jquery/test/data/offset/relative.html', '../app/bower_components/jquery/test/data/offset/scroll.html', '../app/bower_components/jquery/test/data/offset/static.html', '../app/bower_components/jquery/test/data/offset/table.html', '../app/bower_components/jquery/test/data/selector/html5_selector.html', '../app/bower_components/jquery/test/data/selector/sizzle_cache.html', '../app/bower_components/jquery/test/data/support/bodyBackground.html', '../app/bower_components/jquery/test/data/support/shrinkWrapBlocks.html', '../app/bower_components/jquery/test/data/support/testElementCrash.html', '../app/bower_components/jquery/test/data/test.html', '../app/bower_components/jquery/test/data/test2.html', '../app/bower_components/jquery/test/data/test3.html', '../app/bower_components/jquery/test/delegatetest.html', '../app/bower_components/jquery/test/hovertest.html', '../app/bower_components/jquery/test/index.html', '../app/bower_components/jquery/test/localfile.html', '../app/bower_components/jquery/test/networkerror.html', '../app/bower_components/jquery/test/readywait.html', '../app/index.html', '../app/views/charts/bar.html', '../app/views/charts/donut.html', '../app/views/charts/line.html', '../app/views/charts/posts.html', '../app/views/main.html', '../node_modules/grunt-contrib-connect/node_modules/connect/lib/public/directory.html', '../node_modules/grunt-contrib-connect/node_modules/connect/lib/public/error.html', '../node_modules/grunt-contrib-connect/node_modules/connect/node_modules/formidable/test/tools/base64.html', '../node_modules/grunt-contrib-htmlmin/tmp/multiple.html', '../node_modules/grunt-contrib-htmlmin/tmp/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/console-browserify/test/static/index.html', '../node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/underscore/index.html', '../node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/faye-websocket/examples/sse.html', '../node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/faye-websocket/examples/ws.html', '../node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/qs/test/browser/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/colors/example.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/hogan.js/test/html/list.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/hogan.js/test/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/request/node_modules/form-data/node_modules/async/test/test.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-google-cdn/node_modules/bower/test/assets/package-repo/test/file_reader.html', '../node_modules/grunt-google-cdn/node_modules/bower/test/assets/package-repo/test/index.html', '../node_modules/grunt-html2js/test/fixtures/five.tpl.html', '../node_modules/grunt-html2js/test/fixtures/four.tpl.html', '../node_modules/grunt-html2js/test/fixtures/one.tpl.html', '../node_modules/grunt-html2js/test/fixtures/pattern.tpl.html', '../node_modules/grunt-html2js/test/fixtures/process_function.tpl.html', '../node_modules/grunt-html2js/test/fixtures/process_template.tpl.html', '../node_modules/grunt-html2js/test/fixtures/three.tpl.html', '../node_modules/grunt-html2js/test/fixtures/two.tpl.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/colors/example.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/sax/LICENSE-W3C.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/sax/examples/test.html', '../node_modules/grunt/node_modules/colors/example.html', '../node_modules/grunt/node_modules/grunt-legacy-log/node_modules/underscore.string/test/test.html', '../node_modules/grunt/node_modules/grunt-legacy-log/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt/node_modules/grunt-legacy-log/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html', '../node_modules/grunt/node_modules/underscore.string/test/test.html', '../node_modules/grunt/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt/node_modules/underscore.string/test/test_underscore/temp_tests.html', '../node_modules/grunt/node_modules/underscore.string/test/test_underscore/test.html', '../test/runner.html']);
+angular.module('socCharts-templates', ['404.html', 'bower_components/bootstrap-sass/docs/base-css.html', 'bower_components/bootstrap-sass/docs/components.html', 'bower_components/bootstrap-sass/docs/customize.html', 'bower_components/bootstrap-sass/docs/examples/carousel.html', 'bower_components/bootstrap-sass/docs/examples/fluid.html', 'bower_components/bootstrap-sass/docs/examples/hero.html', 'bower_components/bootstrap-sass/docs/examples/justified-nav.html', 'bower_components/bootstrap-sass/docs/examples/marketing-narrow.html', 'bower_components/bootstrap-sass/docs/examples/signin.html', 'bower_components/bootstrap-sass/docs/examples/starter-template.html', 'bower_components/bootstrap-sass/docs/examples/sticky-footer-navbar.html', 'bower_components/bootstrap-sass/docs/examples/sticky-footer.html', 'bower_components/bootstrap-sass/docs/extend.html', 'bower_components/bootstrap-sass/docs/getting-started.html', 'bower_components/bootstrap-sass/docs/index.html', 'bower_components/bootstrap-sass/docs/javascript.html', 'bower_components/bootstrap-sass/docs/scaffolding.html', 'bower_components/bootstrap-sass/js/tests/index.html', 'bower_components/es5-shim/tests/index.html', 'bower_components/es5-shim/tests/index.min.html', 'bower_components/jquery/speed/closest.html', 'bower_components/jquery/speed/css.html', 'bower_components/jquery/speed/event.html', 'bower_components/jquery/speed/filter.html', 'bower_components/jquery/speed/find.html', 'bower_components/jquery/speed/index.html', 'bower_components/jquery/speed/slice.vs.concat.html', 'bower_components/jquery/test/data/ajax/unreleasedXHR.html', 'bower_components/jquery/test/data/cleanScript.html', 'bower_components/jquery/test/data/core/cc_on.html', 'bower_components/jquery/test/data/dimensions/documentLarge.html', 'bower_components/jquery/test/data/dimensions/documentSmall.html', 'bower_components/jquery/test/data/event/promiseReady.html', 'bower_components/jquery/test/data/event/syncReady.html', 'bower_components/jquery/test/data/iframe.html', 'bower_components/jquery/test/data/manipulation/iframe-denied.html', 'bower_components/jquery/test/data/name.html', 'bower_components/jquery/test/data/offset/absolute.html', 'bower_components/jquery/test/data/offset/body.html', 'bower_components/jquery/test/data/offset/fixed.html', 'bower_components/jquery/test/data/offset/relative.html', 'bower_components/jquery/test/data/offset/scroll.html', 'bower_components/jquery/test/data/offset/static.html', 'bower_components/jquery/test/data/offset/table.html', 'bower_components/jquery/test/data/selector/html5_selector.html', 'bower_components/jquery/test/data/selector/sizzle_cache.html', 'bower_components/jquery/test/data/support/bodyBackground.html', 'bower_components/jquery/test/data/support/shrinkWrapBlocks.html', 'bower_components/jquery/test/data/support/testElementCrash.html', 'bower_components/jquery/test/data/test.html', 'bower_components/jquery/test/data/test2.html', 'bower_components/jquery/test/data/test3.html', 'bower_components/jquery/test/delegatetest.html', 'bower_components/jquery/test/hovertest.html', 'bower_components/jquery/test/index.html', 'bower_components/jquery/test/localfile.html', 'bower_components/jquery/test/networkerror.html', 'bower_components/jquery/test/readywait.html', 'index.html', 'views/charts/bar.html', 'views/charts/donut.html', 'views/charts/line.html', 'views/charts/posts.html', 'views/main.html', '../node_modules/grunt-contrib-connect/node_modules/connect/lib/public/directory.html', '../node_modules/grunt-contrib-connect/node_modules/connect/lib/public/error.html', '../node_modules/grunt-contrib-connect/node_modules/connect/node_modules/formidable/test/tools/base64.html', '../node_modules/grunt-contrib-htmlmin/tmp/multiple.html', '../node_modules/grunt-contrib-htmlmin/tmp/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-build/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-build/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-build/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/extname/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/decompress/node_modules/map-key/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-contrib-imagemin/node_modules/pngquant-bin/node_modules/bin-wrapper/node_modules/download/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/console-browserify/test/static/index.html', '../node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/underscore/index.html', '../node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/faye-websocket/examples/sse.html', '../node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/faye-websocket/examples/ws.html', '../node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/qs/test/browser/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/colors/example.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/hogan.js/test/html/list.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/hogan.js/test/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/request/node_modules/form-data/node_modules/async/test/test.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html', '../node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/request/node_modules/node-uuid/test/test.html', '../node_modules/grunt-google-cdn/node_modules/bower/test/assets/package-repo/test/file_reader.html', '../node_modules/grunt-google-cdn/node_modules/bower/test/assets/package-repo/test/index.html', '../node_modules/grunt-html2js/test/fixtures/five.tpl.html', '../node_modules/grunt-html2js/test/fixtures/four.tpl.html', '../node_modules/grunt-html2js/test/fixtures/one.tpl.html', '../node_modules/grunt-html2js/test/fixtures/pattern.tpl.html', '../node_modules/grunt-html2js/test/fixtures/process_function.tpl.html', '../node_modules/grunt-html2js/test/fixtures/process_template.tpl.html', '../node_modules/grunt-html2js/test/fixtures/three.tpl.html', '../node_modules/grunt-html2js/test/fixtures/two.tpl.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/colors/example.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/sax/LICENSE-W3C.html', '../node_modules/grunt-svgmin/node_modules/svgo/node_modules/sax/examples/test.html', '../node_modules/grunt/node_modules/colors/example.html', '../node_modules/grunt/node_modules/grunt-legacy-log/node_modules/underscore.string/test/test.html', '../node_modules/grunt/node_modules/grunt-legacy-log/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt/node_modules/grunt-legacy-log/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/test/test_underscore/index.html', '../node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html', '../node_modules/grunt/node_modules/underscore.string/test/test.html', '../node_modules/grunt/node_modules/underscore.string/test/test_standalone.html', '../node_modules/grunt/node_modules/underscore.string/test/test_underscore/temp_tests.html', '../node_modules/grunt/node_modules/underscore.string/test/test_underscore/test.html', '../test/runner.html']);
 
-angular.module("../app/404.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/404.html",
+angular.module("404.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("404.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "    <head>\n" +
@@ -162,8 +162,8 @@ angular.module("../app/404.html", []).run(["$templateCache", function($templateC
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/base-css.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/base-css.html",
+angular.module("bower_components/bootstrap-sass/docs/base-css.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/base-css.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -2407,8 +2407,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/base-css.html", []).
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/components.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/components.html",
+angular.module("bower_components/bootstrap-sass/docs/components.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/components.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -5063,8 +5063,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/components.html", []
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/customize.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/customize.html",
+angular.module("bower_components/bootstrap-sass/docs/customize.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/customize.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -5607,8 +5607,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/customize.html", [])
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/carousel.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/carousel.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/carousel.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/carousel.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -6066,8 +6066,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/carousel.ht
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/fluid.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/fluid.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/fluid.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/fluid.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -6234,8 +6234,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/fluid.html"
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/hero.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/hero.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/hero.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/hero.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -6365,8 +6365,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/hero.html",
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/justified-nav.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/justified-nav.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/justified-nav.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/justified-nav.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -6544,8 +6544,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/justified-n
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/marketing-narrow.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/marketing-narrow.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/marketing-narrow.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/marketing-narrow.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -6686,8 +6686,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/marketing-n
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/signin.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/signin.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/signin.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/signin.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -6785,8 +6785,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/signin.html
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/starter-template.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/starter-template.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/starter-template.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/starter-template.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -6869,8 +6869,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/starter-tem
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/sticky-footer-navbar.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/sticky-footer-navbar.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/sticky-footer-navbar.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/sticky-footer-navbar.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -7035,8 +7035,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/sticky-foot
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/examples/sticky-footer.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/examples/sticky-footer.html",
+angular.module("bower_components/bootstrap-sass/docs/examples/sticky-footer.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/examples/sticky-footer.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -7165,8 +7165,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/examples/sticky-foot
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/extend.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/extend.html",
+angular.module("bower_components/bootstrap-sass/docs/extend.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/extend.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -7477,8 +7477,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/extend.html", []).ru
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/getting-started.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/getting-started.html",
+angular.module("bower_components/bootstrap-sass/docs/getting-started.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/getting-started.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -7884,8 +7884,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/getting-started.html
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/index.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/index.html",
+angular.module("bower_components/bootstrap-sass/docs/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/index.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -8135,8 +8135,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/index.html", []).run
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/javascript.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/javascript.html",
+angular.module("bower_components/bootstrap-sass/docs/javascript.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/javascript.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -9945,8 +9945,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/javascript.html", []
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/docs/scaffolding.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/docs/scaffolding.html",
+angular.module("bower_components/bootstrap-sass/docs/scaffolding.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/docs/scaffolding.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "  <head>\n" +
@@ -10577,8 +10577,8 @@ angular.module("../app/bower_components/bootstrap-sass/docs/scaffolding.html", [
     "");
 }]);
 
-angular.module("../app/bower_components/bootstrap-sass/js/tests/index.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/bootstrap-sass/js/tests/index.html",
+angular.module("bower_components/bootstrap-sass/js/tests/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/bootstrap-sass/js/tests/index.html",
     "<!DOCTYPE HTML>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -10637,8 +10637,8 @@ angular.module("../app/bower_components/bootstrap-sass/js/tests/index.html", [])
     "</html>");
 }]);
 
-angular.module("../app/bower_components/es5-shim/tests/index.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/es5-shim/tests/index.html",
+angular.module("bower_components/es5-shim/tests/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/es5-shim/tests/index.html",
     "<!DOCTYPE HTML>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -10706,8 +10706,8 @@ angular.module("../app/bower_components/es5-shim/tests/index.html", []).run(["$t
     "");
 }]);
 
-angular.module("../app/bower_components/es5-shim/tests/index.min.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/es5-shim/tests/index.min.html",
+angular.module("bower_components/es5-shim/tests/index.min.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/es5-shim/tests/index.min.html",
     "<!DOCTYPE HTML>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -10774,8 +10774,8 @@ angular.module("../app/bower_components/es5-shim/tests/index.min.html", []).run(
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/speed/closest.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/speed/closest.html",
+angular.module("bower_components/jquery/speed/closest.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/speed/closest.html",
     "<!doctype html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -10818,8 +10818,8 @@ angular.module("../app/bower_components/jquery/speed/closest.html", []).run(["$t
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/speed/css.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/speed/css.html",
+angular.module("bower_components/jquery/speed/css.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/speed/css.html",
     "<!doctype html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -10905,8 +10905,8 @@ angular.module("../app/bower_components/jquery/speed/css.html", []).run(["$templ
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/speed/event.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/speed/event.html",
+angular.module("bower_components/jquery/speed/event.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/speed/event.html",
     "<!doctype html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -10968,8 +10968,8 @@ angular.module("../app/bower_components/jquery/speed/event.html", []).run(["$tem
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/speed/filter.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/speed/filter.html",
+angular.module("bower_components/jquery/speed/filter.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/speed/filter.html",
     "<!doctype html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -11156,8 +11156,8 @@ angular.module("../app/bower_components/jquery/speed/filter.html", []).run(["$te
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/speed/find.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/speed/find.html",
+angular.module("bower_components/jquery/speed/find.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/speed/find.html",
     "<!doctype html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -11340,8 +11340,8 @@ angular.module("../app/bower_components/jquery/speed/find.html", []).run(["$temp
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/speed/index.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/speed/index.html",
+angular.module("bower_components/jquery/speed/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/speed/index.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "\n" +
@@ -11417,8 +11417,8 @@ angular.module("../app/bower_components/jquery/speed/index.html", []).run(["$tem
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/speed/slice.vs.concat.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/speed/slice.vs.concat.html",
+angular.module("bower_components/jquery/speed/slice.vs.concat.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/speed/slice.vs.concat.html",
     "<script type=\"text/javascript\">\n" +
     "(function(){\n" +
     "	// Conclusions:\n" +
@@ -11468,8 +11468,8 @@ angular.module("../app/bower_components/jquery/speed/slice.vs.concat.html", []).
     "</script>");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/ajax/unreleasedXHR.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/ajax/unreleasedXHR.html",
+angular.module("bower_components/jquery/test/data/ajax/unreleasedXHR.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/ajax/unreleasedXHR.html",
     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n" +
     "<html>\n" +
     "<head>\n" +
@@ -11498,8 +11498,8 @@ angular.module("../app/bower_components/jquery/test/data/ajax/unreleasedXHR.html
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/cleanScript.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/cleanScript.html",
+angular.module("bower_components/jquery/test/data/cleanScript.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/cleanScript.html",
     "<script>\n" +
     "<!--\n" +
     "ok( true, \"script within html comments executed\" );\n" +
@@ -11513,8 +11513,8 @@ angular.module("../app/bower_components/jquery/test/data/cleanScript.html", []).
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/core/cc_on.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/core/cc_on.html",
+angular.module("bower_components/jquery/test/data/core/cc_on.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/core/cc_on.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "<head>\n" +
@@ -11540,8 +11540,8 @@ angular.module("../app/bower_components/jquery/test/data/core/cc_on.html", []).r
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/dimensions/documentLarge.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/dimensions/documentLarge.html",
+angular.module("bower_components/jquery/test/data/dimensions/documentLarge.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/dimensions/documentLarge.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\" dir=\"ltr\" id=\"html\">\n" +
     "<head>\n" +
@@ -11562,8 +11562,8 @@ angular.module("../app/bower_components/jquery/test/data/dimensions/documentLarg
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/dimensions/documentSmall.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/dimensions/documentSmall.html",
+angular.module("bower_components/jquery/test/data/dimensions/documentSmall.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/dimensions/documentSmall.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\" dir=\"ltr\" id=\"html\">\n" +
     "<head>\n" +
@@ -11588,8 +11588,8 @@ angular.module("../app/bower_components/jquery/test/data/dimensions/documentSmal
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/event/promiseReady.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/event/promiseReady.html",
+angular.module("bower_components/jquery/test/data/event/promiseReady.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/event/promiseReady.html",
     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n" +
     "<html>\n" +
     "<head>\n" +
@@ -11610,8 +11610,8 @@ angular.module("../app/bower_components/jquery/test/data/event/promiseReady.html
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/event/syncReady.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/event/syncReady.html",
+angular.module("bower_components/jquery/test/data/event/syncReady.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/event/syncReady.html",
     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n" +
     "<html>\n" +
     "<head>\n" +
@@ -11638,8 +11638,8 @@ angular.module("../app/bower_components/jquery/test/data/event/syncReady.html", 
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/iframe.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/iframe.html",
+angular.module("bower_components/jquery/test/data/iframe.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/iframe.html",
     "<html>\n" +
     "	<head>\n" +
     "		<title>iframe</title>\n" +
@@ -11651,8 +11651,8 @@ angular.module("../app/bower_components/jquery/test/data/iframe.html", []).run([
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/manipulation/iframe-denied.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/manipulation/iframe-denied.html",
+angular.module("bower_components/jquery/test/data/manipulation/iframe-denied.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/manipulation/iframe-denied.html",
     "<!DOCTYPE html>\n" +
     "<html>\n" +
     "	<head>\n" +
@@ -11692,14 +11692,14 @@ angular.module("../app/bower_components/jquery/test/data/manipulation/iframe-den
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/name.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/name.html",
+angular.module("bower_components/jquery/test/data/name.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/name.html",
     "ERROR <script type=\"text/javascript\">ok( true, \"name.html retrieved\" );</script>\n" +
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/offset/absolute.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/offset/absolute.html",
+angular.module("bower_components/jquery/test/data/offset/absolute.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/offset/absolute.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html>\n" +
@@ -11744,8 +11744,8 @@ angular.module("../app/bower_components/jquery/test/data/offset/absolute.html", 
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/offset/body.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/offset/body.html",
+angular.module("bower_components/jquery/test/data/offset/body.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/offset/body.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html>\n" +
@@ -11775,8 +11775,8 @@ angular.module("../app/bower_components/jquery/test/data/offset/body.html", []).
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/offset/fixed.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/offset/fixed.html",
+angular.module("bower_components/jquery/test/data/offset/fixed.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/offset/fixed.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html>\n" +
@@ -11814,8 +11814,8 @@ angular.module("../app/bower_components/jquery/test/data/offset/fixed.html", [])
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/offset/relative.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/offset/relative.html",
+angular.module("bower_components/jquery/test/data/offset/relative.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/offset/relative.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html>\n" +
@@ -11850,8 +11850,8 @@ angular.module("../app/bower_components/jquery/test/data/offset/relative.html", 
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/offset/scroll.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/offset/scroll.html",
+angular.module("bower_components/jquery/test/data/offset/scroll.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/offset/scroll.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html>\n" +
@@ -11894,8 +11894,8 @@ angular.module("../app/bower_components/jquery/test/data/offset/scroll.html", []
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/offset/static.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/offset/static.html",
+angular.module("bower_components/jquery/test/data/offset/static.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/offset/static.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html>\n" +
@@ -11930,8 +11930,8 @@ angular.module("../app/bower_components/jquery/test/data/offset/static.html", []
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/offset/table.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/offset/table.html",
+angular.module("bower_components/jquery/test/data/offset/table.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/offset/table.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
     "	\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html>\n" +
@@ -11978,8 +11978,8 @@ angular.module("../app/bower_components/jquery/test/data/offset/table.html", [])
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/selector/html5_selector.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/selector/html5_selector.html",
+angular.module("bower_components/jquery/test/data/selector/html5_selector.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/selector/html5_selector.html",
     "<!doctype html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -12097,8 +12097,8 @@ angular.module("../app/bower_components/jquery/test/data/selector/html5_selector
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/selector/sizzle_cache.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/selector/sizzle_cache.html",
+angular.module("bower_components/jquery/test/data/selector/sizzle_cache.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/selector/sizzle_cache.html",
     "<!doctype html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -12123,8 +12123,8 @@ angular.module("../app/bower_components/jquery/test/data/selector/sizzle_cache.h
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/support/bodyBackground.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/support/bodyBackground.html",
+angular.module("bower_components/jquery/test/data/support/bodyBackground.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/support/bodyBackground.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\" dir=\"ltr\" id=\"html\">\n" +
     "<head>\n" +
@@ -12156,8 +12156,8 @@ angular.module("../app/bower_components/jquery/test/data/support/bodyBackground.
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/support/shrinkWrapBlocks.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/support/shrinkWrapBlocks.html",
+angular.module("bower_components/jquery/test/data/support/shrinkWrapBlocks.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/support/shrinkWrapBlocks.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\" dir=\"ltr\" id=\"html\">\n" +
     "<head>\n" +
@@ -12184,8 +12184,8 @@ angular.module("../app/bower_components/jquery/test/data/support/shrinkWrapBlock
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/support/testElementCrash.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/support/testElementCrash.html",
+angular.module("bower_components/jquery/test/data/support/testElementCrash.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/support/testElementCrash.html",
     "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n" +
     "<head>\n" +
@@ -12206,8 +12206,8 @@ angular.module("../app/bower_components/jquery/test/data/support/testElementCras
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/test.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/test.html",
+angular.module("bower_components/jquery/test/data/test.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/test.html",
     "html text<br/>\n" +
     "<script type=\"text/javascript\">/* <![CDATA[ */\n" +
     "testFoo = \"foo\"; jQuery('#foo').html('foo');\n" +
@@ -12218,8 +12218,8 @@ angular.module("../app/bower_components/jquery/test/data/test.html", []).run(["$
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/test2.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/test2.html",
+angular.module("bower_components/jquery/test/data/test2.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/test2.html",
     "<script type=\"text/javascript\">\n" +
     "var testFoo = \"foo\";\n" +
     "jQuery('#foo').html('foo');\n" +
@@ -12228,16 +12228,16 @@ angular.module("../app/bower_components/jquery/test/data/test2.html", []).run(["
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/data/test3.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/data/test3.html",
+angular.module("bower_components/jquery/test/data/test3.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/data/test3.html",
     "<div class=\"user\">This is a user</div>\n" +
     "<div class=\"user\">This is a user</div>\n" +
     "<div class=\"teacher\">This is a teacher</div>\n" +
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/delegatetest.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/delegatetest.html",
+angular.module("bower_components/jquery/test/delegatetest.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/delegatetest.html",
     "<!DOCTYPE html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -12469,8 +12469,8 @@ angular.module("../app/bower_components/jquery/test/delegatetest.html", []).run(
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/hovertest.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/hovertest.html",
+angular.module("bower_components/jquery/test/hovertest.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/hovertest.html",
     "<html>\n" +
     "<head>\n" +
     "<title>Hover tests</title>\n" +
@@ -12632,8 +12632,8 @@ angular.module("../app/bower_components/jquery/test/hovertest.html", []).run(["$
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/index.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/index.html",
+angular.module("bower_components/jquery/test/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/index.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\" dir=\"ltr\" id=\"html\">\n" +
     "<head>\n" +
@@ -12967,8 +12967,8 @@ angular.module("../app/bower_components/jquery/test/index.html", []).run(["$temp
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/localfile.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/localfile.html",
+angular.module("bower_components/jquery/test/localfile.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/localfile.html",
     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
     "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\" dir=\"ltr\" id=\"html\">\n" +
     "<head>\n" +
@@ -13047,8 +13047,8 @@ angular.module("../app/bower_components/jquery/test/localfile.html", []).run(["$
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/networkerror.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/networkerror.html",
+angular.module("bower_components/jquery/test/networkerror.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/networkerror.html",
     "<!DOCTYPE html>\n" +
     "<html>\n" +
     "<!--\n" +
@@ -13136,8 +13136,8 @@ angular.module("../app/bower_components/jquery/test/networkerror.html", []).run(
     "");
 }]);
 
-angular.module("../app/bower_components/jquery/test/readywait.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/bower_components/jquery/test/readywait.html",
+angular.module("bower_components/jquery/test/readywait.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bower_components/jquery/test/readywait.html",
     "<!DOCTYPE html>\n" +
     "<html>\n" +
     "<!--\n" +
@@ -13211,8 +13211,8 @@ angular.module("../app/bower_components/jquery/test/readywait.html", []).run(["$
     "");
 }]);
 
-angular.module("../app/index.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/index.html",
+angular.module("index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("index.html",
     "<!doctype html>\n" +
     "<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n" +
     "<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n" +
@@ -13286,32 +13286,33 @@ angular.module("../app/index.html", []).run(["$templateCache", function($templat
     "    <script src=\"scripts/directives/charts.column.js\"></script>\n" +
     "    <script src=\"scripts/directives/charts.donut.js\"></script>\n" +
     "    <script src=\"scripts/directives/charts.posts.js\"></script>\n" +
+    "    <script src=\"views/templates.js\"></script>\n" +
     "    <!-- endbuild -->\n" +
     "</body>\n" +
     "</html>\n" +
     "");
 }]);
 
-angular.module("../app/views/charts/bar.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/views/charts/bar.html",
+angular.module("views/charts/bar.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/charts/bar.html",
     "<div ng-show=\"loading\" class=\"animate-fade chart-loading\"><i class=\"fa fa-3x fa-spin fa-spinner\"></i></div>\n" +
     "<div ng-show=\"!loading\" class=\"animate-fade ng-hide chart\"></div>");
 }]);
 
-angular.module("../app/views/charts/donut.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/views/charts/donut.html",
+angular.module("views/charts/donut.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/charts/donut.html",
     "<div ng-show=\"loading\" class=\"animate-fade chart-loading\"><i class=\"fa fa-3x fa-spin fa-spinner\"></i></div>\n" +
     "<div ng-show=\"!loading\" class=\"animate-fade ng-hide chart\"></div>");
 }]);
 
-angular.module("../app/views/charts/line.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/views/charts/line.html",
+angular.module("views/charts/line.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/charts/line.html",
     "<div ng-show=\"loading\" class=\"animate-fade chart-loading\"><i class=\"fa fa-3x fa-spin fa-spinner\"></i></div>\n" +
     "<div ng-show=\"!loading\" class=\"animate-fade ng-hide chart\"></div>");
 }]);
 
-angular.module("../app/views/charts/posts.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/views/charts/posts.html",
+angular.module("views/charts/posts.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/charts/posts.html",
     "<div class=\"post-modal fade ng-hide\" ng-show=\"options.show\">\n" +
     "    <div class=\"modal-aria\" ng-show=\"options.aria\" ng-click=\"options.show = false\"></div>\n" +
     "    <div class=\"modal-dialog\">\n" +
@@ -13362,8 +13363,8 @@ angular.module("../app/views/charts/posts.html", []).run(["$templateCache", func
     "</div>");
 }]);
 
-angular.module("../app/views/main.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../app/views/main.html",
+angular.module("views/main.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/main.html",
     "<div class=\"container-fluid\">\n" +
     "	<div class=\"row\">\n" +
     "		<div class=\"col-sm-12\" columnchart=\"data\" options=\"options\" loading=\"loading\"></div>\n" +
