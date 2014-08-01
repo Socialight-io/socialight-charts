@@ -1,7 +1,7 @@
 'use strict';
 
 var _SocChartsConfig = {
-    path: "bower_components/socialight-charts/dist/views/"
+    path: "http://static.socialight.io/analytics/bower_components/socialight-charts/dist/views/"
 };
 
 /**
@@ -19,7 +19,7 @@ angular
         'ngRoute',
         //'socCharts-templates'
     ])
-    .config(function($routeProvider) {
+    .config(function($routeProvider, $sceDelegateProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: _SocChartsConfig.path + 'demo.html',
@@ -28,4 +28,11 @@ angular
             .otherwise({
                 redirectTo: '/'
             });
+
+        $sceDelegateProvider.resourceUrlWhitelist([
+            // Allow same origin resource loads.
+            'self',
+            // Allow loading from our assets domain.
+            _SocChartsConfig.path + '**'
+        ]);
     });
