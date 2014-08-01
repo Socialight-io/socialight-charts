@@ -1,5 +1,9 @@
 'use strict';
 
+var _SocChartsConfig = {
+    path: "bower_components/socialight-charts/dist/"
+};
+
 /**
  * @ngdoc overview
  * @name socCharts

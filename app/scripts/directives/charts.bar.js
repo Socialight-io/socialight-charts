@@ -3,7 +3,7 @@
 angular.module('socCharts')
     .directive('barchart', function() {
         return {
-            templateUrl: 'views/charts/bar.html',
+            templateUrl: _SocChartsConfig.path + 'views/charts/bar.html',
             restrict: 'A',
             scope: {
                 'barchart': '=',
@@ -148,7 +148,7 @@ angular.module('socCharts')
                             }];
                         }
 
-                    if (data[i].values && data[i].values.length) {
+                        if (data[i].values && data[i].values.length) {
                             data[i].total = data[i].values[data[i].values.length - 1].y1;
                         } else {
                             data[i].total = 0;
@@ -172,7 +172,7 @@ angular.module('socCharts')
                         data = data.slice(0, scope.options.limit);
                     }
 
-                    if (angular.isFunction(data.map)){           
+                    if (angular.isFunction(data.map)) {
                         y.domain(data.map(function(d) {
                             return d.label;
                         }));

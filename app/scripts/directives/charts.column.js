@@ -1,7 +1,7 @@
 'use strict';
 angular.module('socCharts').directive('columnchart', function() {
     return {
-        templateUrl: 'views/charts/bar.html',
+        templateUrl: _SocChartsConfig.path + 'views/charts/bar.html',
         restrict: 'A',
         scope: {
             'columnchart': '=',
@@ -163,7 +163,7 @@ angular.module('socCharts').directive('columnchart', function() {
                         console.log(scope.options.axis.x.label(d));*/
                         return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
                     }));
-                } else if (angular.isFunction(data.map)){
+                } else if (angular.isFunction(data.map)) {
                     x.domain(data.map(function(d) {
                         return d.label;
                     }));
