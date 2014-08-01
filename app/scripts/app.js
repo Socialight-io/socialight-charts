@@ -33,6 +33,6 @@ angular
             // Allow same origin resource loads.
             'self',
             // Allow loading from our assets domain.
-            _SocChartsConfig.path + '**'
+            _SocChartsConfig.path + '**/**'
         ]);
     });
