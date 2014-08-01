@@ -1,0 +1,71 @@
+.animate-
+.ng-hide-add {
+    opacity: 1.0;
+    display: block !important;
+    transition: opacity .5s;
+}
+.animate-
+.ng-hide-add-active {
+    opacity: 0;
+}
+.animate-
+.ng-hide-remove {
+    opacity: 0;
+    display: block !important;
+    transition: opacity .5s;
+}
+.animate-
+.ng-hide-remove-active {
+    opacity: 1;
+}
+#histogram {
+    position: relative;
+}
+.chart-loading {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+}
+.y.axis path, .x.axis path {
+    fill: none;
+    stroke-width: 1px;
+    stroke: gray;
+}
+.x .domain {
+    stroke-dash: 5, 5;
+}
+.post-modal {
+    opacity: 1;
+    text-align: center;
+    width: 80%;
+    position: fixed;
+    top: 56px;
+    left: 20%;
+    z-index: 2000;
+    .modal-aria {
+        position: absolute;
+        width: 100%;
+        height: 1000px;
+        background: rgba(0, 0, 0, .2);
+        z-index: 1000
+   }
+
+   .modal-dialog { 
+        z-index: 10000;
+   }
+}
+.hover-show {
+    font-weight: 300;
+    padding: 3px 5px;
+    background: white;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+.slice:hover .hover-show {
+    display: block;
+}
+
+.over { 
+    cursor: hand;
+}
