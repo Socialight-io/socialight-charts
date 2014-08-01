@@ -1,7 +1,7 @@
 'use strict';
 
 var _SocChartsConfig = {
-    path: "bower_components/socialight-charts/dist/"
+    path: "../views/socialight-charts/"
 };
 
 /**
@@ -22,7 +22,7 @@ angular
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'views/demo.html',
+                templateUrl: _SocChartsConfig.path + 'demo.html',
                 controller: 'DemoCtrl'
             })
             .otherwise({

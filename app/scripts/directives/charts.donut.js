@@ -3,7 +3,7 @@
 angular.module('socCharts')
     .directive('donutchart', function() {
         return {
-            templateUrl: _SocChartsConfig.path + 'views/charts/donut.html',
+            templateUrl: _SocChartsConfig.path + 'charts/donut.html',
             restrict: 'A',
             scope: {
                 'donutchart': '=',

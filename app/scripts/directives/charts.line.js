@@ -1,6 +1,6 @@
 angular.module('socCharts').directive('linechart', function() {
     return {
-        templateUrl: _SocChartsConfig.path + 'views/charts/line.html',
+        templateUrl: _SocChartsConfig.path + 'charts/line.html',
         restrict: 'A',
         scope: {
             'linechart': '=',

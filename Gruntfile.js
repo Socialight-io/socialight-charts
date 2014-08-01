@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     // html2js
-    grunt.loadNpmTasks('grunt-html2js');
+    //grunt.loadNpmTasks('grunt-html2js');
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
@@ -362,6 +362,7 @@ module.exports = function(grunt) {
                         '.htaccess',
                         '*.html',
                         'views/{,*/}*.html',
+                        'views/**/**/*.html',
                         'images/{,*/}*.{webp}',
                         'fonts/*'
                     ]
