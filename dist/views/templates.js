@@ -13287,6 +13287,7 @@ angular.module("index.html", []).run(["$templateCache", function($templateCache)
     "        <script src=\"scripts/directives/charts.column.js\"></script>\n" +
     "        <script src=\"scripts/directives/charts.donut.js\"></script>\n" +
     "        <script src=\"scripts/directives/charts.posts.js\"></script>\n" +
+    "        <script src=\"views/templates.js\"></script>\n" +
     "        <!-- endbuild -->\n" +
     "</body>\n" +
     "</html>\n" +
@@ -13605,7 +13606,7 @@ angular.module("../dist/index.html", []).run(["$templateCache", function($templa
     "    <script src=\"bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js\"></script>\n" +
     "    <script src=\"scripts/vendor.9a966a93.js\"></script>\n" +
     "\n" +
-    "        <script src=\"scripts/scripts.67f86580.js\"></script>\n" +
+    "        <script src=\"scripts/scripts.315f3698.js\"></script>\n" +
     "</body>\n" +
     "</html>\n" +
     "");

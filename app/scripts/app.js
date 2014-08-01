@@ -12,7 +12,8 @@ angular
     .module('socCharts', [
         'ngAnimate',
         'ngResource',
-        'ngRoute'
+        'ngRoute',
+        'socCharts-templates'
     ])
     .config(function($routeProvider) {
         $routeProvider
