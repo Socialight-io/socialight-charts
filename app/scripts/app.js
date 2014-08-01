@@ -1,7 +1,7 @@
 'use strict';
 
 var _SocChartsConfig = {
-    path: "../views/socialight-charts/"
+    path: "bower_components/socialight-charts/dist/views/"
 };
 
 /**
