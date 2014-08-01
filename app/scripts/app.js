@@ -1,10 +1,19 @@
 'use strict';
 
-var _SocChartsConfig = {
-    path: ""
-};
-
-angular.module('socCharts', ['ngAnimate', 'ngRoute', 'socCharts-templates'])
+/**
+ * @ngdoc overview
+ * @name socCharts
+ * @description
+ * # socCharts
+ *
+ * Main module of the application.
+ */
+angular
+    .module('socCharts', [
+        'ngAnimate',
+        'ngResource',
+        'ngRoute'
+    ])
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {

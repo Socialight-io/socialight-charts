@@ -1,7 +1,7 @@
 'use strict';
 angular.module('socCharts').directive('columnchart', function() {
     return {
-        templateUrl: _SocChartsConfig.path + 'views/charts/bar.html',
+        templateUrl: 'views/charts/bar.html',
         restrict: 'A',
         scope: {
             'columnchart': '=',
@@ -12,7 +12,7 @@ angular.module('socCharts').directive('columnchart', function() {
             scope.$watch("columnchart", function() {
                 scope.create();
             }, true);
-            
+
             scope.$watch("options", function() {
                 scope.update();
             }, true);
@@ -86,15 +86,15 @@ angular.module('socCharts').directive('columnchart', function() {
 
                 var data = [];
 
-                if (scope.columnchart) { 
-                    scope.columnchart.forEach(function(d, i) {
+                if (scope.columnchart) {
+                    angular.forEach(scope.columnchart, function(d, i) {
 
                         var y0 = 0;
                         data[i] = {
                             label: typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label]
                         };
                         if (scope.options.stack) {
-                            scope.options.stack.forEach(function(v) {
+                            angular.forEach(scope.options.stack, function(v) {
                                 data[i].values = data[i].values || [];
                                 if (typeof(v.key) == "function") {
                                     var value = {
@@ -128,7 +128,11 @@ angular.module('socCharts').directive('columnchart', function() {
                             }];
                         }
 
-                        data[i].total = data[i].values[data[i].values.length - 1] && data[i].values[data[i].values.length - 1].y1 ? data[i].values[data[i].values.length - 1].y1 : 0;
+                        if (data[i].values && data[i].values[data[i].values.length - 1] && data[i].values[data[i].values.length - 1].y1) {
+                            data[i].total = data[i].values[data[i].values.length - 1].y1;
+                        } else {
+                            data[i].total = 0;
+                        }
                     });
                 }
 
@@ -159,8 +163,10 @@ angular.module('socCharts').directive('columnchart', function() {
                         console.log(scope.options.axis.x.label(d));*/
                         return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
                     }));
-                } else { 
-                    x.domain(data.map(function(d) { return d.label; }));
+                } else {
+                    x.domain(data.map(function(d) {
+                        return d.label;
+                    }));
                 }
 
                 var run = 1;
@@ -189,16 +195,18 @@ angular.module('socCharts').directive('columnchart', function() {
                 }).style("fill", function(d) {
                     return d.color;
                 }).on("click", function(d, i) {
-                    if (scope.options.click) { 
+                    if (scope.options.click) {
                         scope.options.click(d);
                     }
                 }).on("mouseover", function(ob, i, el) {
                     var pos = $(this).position();
 
-                    tooltip.style("left", pos.left+"px")
-                        .style("top", (pos.top-40)+"px")
+                    tooltip.style("left", pos.left + "px")
+                        .style("top", (pos.top - 40) + "px")
                         .style("display", "block")
-                        .html( function (d) { return typeof(scope.options.tooltip) == "function" ? scope.options.tooltip(ob) : ob[scope.options.tooltip]; })
+                        .html(function(d) {
+                            return typeof(scope.options.tooltip) == "function" ? scope.options.tooltip(ob) : ob[scope.options.tooltip];
+                        })
                         .attr("font-family", "sans-serif")
                         .attr("font-size", "14px")
                         .attr("fill", "red");
