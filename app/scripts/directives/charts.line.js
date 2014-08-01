@@ -103,16 +103,19 @@ angular.module('socCharts').directive('linechart', function() {
 
                 var container = d3.selectAll(element);
                 container.selectAll(".chart").selectAll("svg").remove();
-                var svg = container.selectAll(".chart").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + (margin.left + scope.options.offset.left) + "," + (margin.top + scope.options.offset.top) + ")");
+                var svg = container.selectAll(".chart").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g");
+                if (scope.options && scope.options.offset) {
+                    svg.attr("transform", "translate(" + (margin.left + scope.options.offset.left) + "," + (margin.top + scope.options.offset.top) + ")");
+                }
 
                 var data = [];
                 data = angular.copy(scope.data);
 
-                if (scope.options.sort && typeof(scope.options.sort) == "function") {
+                if (scope.options.sort && angular.isFunction(scope.options.sort) && angular.isFunction(data.sort)) {
                     if (data) {
                         data = data.sort(scope.options.sort);
                     }
-                } else if (scope.options.sort) {
+                } else if (scope.options.sort && angular.isFunction(data.sort)) {
                     data.sort(function(a, b) {
                         if (scope.options.sort == "desc") {
                             return b.total - a.total;
@@ -127,13 +130,23 @@ angular.module('socCharts').directive('linechart', function() {
                         x.domain(scope.options.extent);
                     } else {
                         x.domain(d3.extent(data, function(d) {
-                            return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
+                            if (typeof(scope.options.axis.x.label) == "function") {
+                                return scope.options.axis.x.label(d);
+                            } else {
+                                return d[scope.options.axis.x.label];
+                            }
                         }));
                     }
                 } else {
-                    x.domain(data.map(function(d) {
-                        return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
-                    }));
+                    if (data.map) {
+                        x.domain(data.map(function(d) {
+                            if (typeof(scope.options.axis.x.label) == "function") {
+                                return scope.options.axis.x.label(d);
+                            } else {
+                                return d[scope.options.axis.x.label];
+                            }
+                        }));
+                    }
                 }
 
                 if (data) {
@@ -159,7 +172,7 @@ angular.module('socCharts').directive('linechart', function() {
                 }
 
                 if (scope.options && scope.options.stack) {
-                    scope.options.stack.forEach(function(l) {
+                    angular.forEach(scope.options.stack, function(l) {
                         featured = l.key;
 
                         if (data) {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('socCharts')
-    .controller('MainCtrl', function($scope) {
+    .controller('DemoCtrl', function($scope) {
 
         $scope.options = {
             label: "label",

@@ -110,7 +110,7 @@ angular.module('socCharts')
                     var data = angular.copy(scope.barchart);
                     var y0 = 0;
 
-                    data.forEach(function(d, i) {
+                    angular.forEach(data, function(d, i) {
 
                         var y0 = 0;
                         data[i] = {
@@ -118,7 +118,7 @@ angular.module('socCharts')
                         };
 
                         if (scope.options.stack) {
-                            scope.options.stack.forEach(function(v) {
+                            angular.forEach(scope.options.stack, function(v) {
                                 data[i].values = data[i].values || [];
 
                                 if (typeof(v.key) == "function") {
@@ -148,13 +148,17 @@ angular.module('socCharts')
                             }];
                         }
 
-                        data[i].total = data[i].values[data[i].values.length - 1].y1;
+                    if (data[i].values && data[i].values.length) {
+                            data[i].total = data[i].values[data[i].values.length - 1].y1;
+                        } else {
+                            data[i].total = 0;
+                        }
 
                     });
 
-                    if (scope.options.sort && typeof(scope.options.sort) == "function") {
+                    if (scope.options.sort && typeof(scope.options.sort) == "function" && typeof(data.sort) == "function") {
                         data = data.sort(scope.options.sort);
-                    } else if (scope.options.sort) {
+                    } else if (scope.options.sort && typeof(data.sort) == "function") {
                         data.sort(function(a, b) {
                             if (scope.options.sort == "desc") {
                                 return b.total - a.total;
@@ -164,16 +168,18 @@ angular.module('socCharts')
                         });
                     }
 
-                    if (scope.options.limit) {
+                    if (scope.options.limit && typeof(data.slice) == "function") {
                         data = data.slice(0, scope.options.limit);
                     }
 
-                    y.domain(data.map(function(d) {
-                        return d.label;
-                    }));
-                    x.domain([d3.max(data, function(d) {
-                        return d.total;
-                    }), 0]);
+                    if (angular.isFunction(data.map)){           
+                        y.domain(data.map(function(d) {
+                            return d.label;
+                        }));
+                        x.domain([d3.max(data, function(d) {
+                            return d.total;
+                        }), 0]);
+                    }
 
                     if (scope.options.axis.x.show) {
                         svg.append("g")

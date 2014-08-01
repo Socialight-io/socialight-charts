@@ -128,7 +128,7 @@ angular.module('socCharts').directive('columnchart', function() {
                             }];
                         }
 
-                        if (data[i].values && data[i].values[data[i].values.length - 1] && data[i].values[data[i].values.length - 1].y1) {
+                        if (data[i].values && data[i].values.length) {
                             data[i].total = data[i].values[data[i].values.length - 1].y1;
                         } else {
                             data[i].total = 0;
@@ -136,9 +136,9 @@ angular.module('socCharts').directive('columnchart', function() {
                     });
                 }
 
-                if (scope.options.sort && typeof(scope.options.sort) == "function") {
+                if (scope.options.sort && angular.isFunction(scope.options.sort) && angular.isFunction(data.sort)) {
                     data = data.sort(scope.options.sort);
-                } else if (scope.options.sort) {
+                } else if (scope.options.sort && angular.isFunction(data.sort)) {
                     data.sort(function(a, b) {
                         if (scope.options.sort == "desc") {
                             return b.total - a.total;
@@ -157,13 +157,13 @@ angular.module('socCharts').directive('columnchart', function() {
                         });
                     }
                     x.domain(extent);
-                } else if (!run) {
+                } else if (!run && angular.isFunction(data.map)) {
                     x.domain(data.map(function(d) {
                         /*console.log(d);
                         console.log(scope.options.axis.x.label(d));*/
                         return typeof(scope.options.axis.x.label) == "function" ? scope.options.axis.x.label(d) : d[scope.options.axis.x.label];
                     }));
-                } else {
+                } else if (angular.isFunction(data.map)){
                     x.domain(data.map(function(d) {
                         return d.label;
                     }));

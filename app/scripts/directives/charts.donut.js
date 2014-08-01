@@ -178,35 +178,36 @@ angular.module('socCharts')
                             .on("click", scope.options.click || function(d) {
                                 console.log(d);
                             });
-                    }
 
-                    scope.arcs.append("svg:text")
-                        .attr("class", "hover-show")
-                        .attr("text-anchor", "middle") // center the text on it's origin
-                    .attr("transform", function(d) {
-                        var cent = scope.textArc.centroid(d);
-                        return "translate(" + cent + ")";
-                    })
-                        .style("font-size", Math.round(scope.radius / 6.5) + "px")
-                        .style("font-weight", "bold")
-                        .style("fill", "white")
-                        .text(function(d, i) {
-                            return si(d.data[scope.options.stack.key]);
-                        });
-
-                    scope.arcs.append("svg:text")
-                        .attr("class", "small-text hover-show")
-                        .attr("text-anchor", "middle")
+                        scope.arcs.append("svg:text")
+                            .attr("class", "hover-show")
+                            .attr("text-anchor", "middle") // center the text on it's origin
                         .attr("transform", function(d) {
                             var cent = scope.textArc.centroid(d);
-                            cent[1] = cent[1] + (scope.radius * .16);
                             return "translate(" + cent + ")";
                         })
-                        .style("font-size", Math.round(scope.radius / 10) + "px")
-                        .style("fill", "white")
-                        .text(function(d, i) {
-                            return d.data.label;
-                        });
+                            .style("font-size", Math.round(scope.radius / 6.5) + "px")
+                            .style("font-weight", "bold")
+                            .style("fill", "white")
+                            .text(function(d, i) {
+                                return si(d.data[scope.options.stack.key]);
+                            });
+
+                        scope.arcs.append("svg:text")
+                            .attr("class", "small-text hover-show")
+                            .attr("text-anchor", "middle")
+                            .attr("transform", function(d) {
+                                var cent = scope.textArc.centroid(d);
+                                cent[1] = cent[1] + (scope.radius * .16);
+                                return "translate(" + cent + ")";
+                            })
+                            .style("font-size", Math.round(scope.radius / 10) + "px")
+                            .style("fill", "white")
+                            .text(function(d, i) {
+                                return d.data.label;
+                            });
+                    }
+
                     return this;
                 };
 
