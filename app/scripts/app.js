@@ -13,7 +13,7 @@ angular
         'ngAnimate',
         'ngResource',
         'ngRoute',
-        'socCharts-templates'
+        //'socCharts-templates'
     ])
     .config(function($routeProvider) {
         $routeProvider

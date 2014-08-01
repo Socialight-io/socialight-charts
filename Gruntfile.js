@@ -295,19 +295,38 @@ module.exports = function(grunt) {
             }
         },
 
-        html2js: {
-            options: {
-                base: 'views',
-                module: 'socCharts-templates',
-                rename: function(moduleName) {
-                    return moduleName.replace('../app/', '');
-                }
-            },
-            main: {
-                src: ['*.html', '**/*.html'],
-                dest: '<%= yeoman.dist %>/views/templates.js'
-            },
+        htmlmin: {
+            dist: {
+                options: {
+                    collapseWhitespace: true,
+                    conservativeCollapse: true,
+                    collapseBooleanAttributes: true,
+                    removeCommentsFromCDATA: true,
+                    removeOptionalTags: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.dist %>',
+                    src: ['*.html', 'views/{,*/}*.html'],
+                    dest: '<%= yeoman.dist %>'
+                }]
+            }
         },
+
+        // html2js - notcurrently using; this would probably replace htmlmin (above)
+        //html2js: {
+        //    options: {
+        //        base: 'views',
+        //        module: 'socCharts-templates',
+        //        rename: function(moduleName) {
+        //            return moduleName.replace('../app/', '');
+        //       }
+        //    },
+        //    main: {
+        //        src: ['*.html', '**/*.html'],
+        //        dest: '<%= yeoman.dist %>/views/templates.js'
+        //    },
+        //},
 
         // ngmin tries to make the code safe for minification automatically by
         // using the Angular long form for dependency injection. It doesn't work on
@@ -431,9 +450,10 @@ module.exports = function(grunt) {
         'cdnify',
         'cssmin',
         'uglify',
-        'filerev',
+        //'filerev',
         'usemin',
-        'html2js'
+        'htmlmin'
+        //'html2js'
     ]);
 
     grunt.registerTask('default', [
