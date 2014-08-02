@@ -1,8 +1,12 @@
 'use strict';
 
-var _SocChartsConfig = {
-    path: "http://static.socialight.io/analytics/bower_components/socialight-charts/dist/views/"
-};
+// set up the config, unless it already exists
+if (!_SocChartsConfig) {
+    var _SocChartsConfig = {};
+}
+
+_SocChartsConfig.path = _SocChartsConfig.path || "http://static.socialight.io/analytics/bower_components/socialight-charts/dist/views/"
+
 
 /**
  * @ngdoc overview
