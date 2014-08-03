@@ -19,7 +19,7 @@ Then include the the module's css and script files in your app:
 
 Now the module should be avilible for you to include in your angular app.
 
-###Running (testing) the Module
+###Running a Demo of the Module
 
 Clone this repo and run the following commands to set up the dependancies:
 
