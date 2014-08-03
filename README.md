@@ -3,7 +3,7 @@ socialight-charts
 
 Angular module that provides support for D3 charts
 
-###Installing
+###Install in your app
 
 #### Via Bower
 
@@ -19,7 +19,7 @@ Then include the the module's css and script files in your app:
 
 Now the module should be avilible for you to include in your angular app.
 
-###Running a Demo of the Module
+###Run a Demo of the Module
 
 Clone this repo and run the following commands to set up the dependancies:
 
