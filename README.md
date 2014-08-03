@@ -1,7 +1,7 @@
 socialight-charts
 =================
 
-Angular module that providing support for D3 charts
+Angular module that provides support for D3 charts
 
 ###Installing
 
@@ -17,13 +17,14 @@ Then include the the module's css and script files in your app:
 <script src="bower_components/socialight-charts/dist/scripts/scripts.js"></script>
 ```
 
-Now the module should be avilible for you in angular.
+Now the module should be avilible for you to include in your angular app.
 
 ###Running (testing) the Module
 
-Clone this repo and run the following to set up the dependancies:
+Clone this repo and run the following commands to set up the dependancies:
 
-`npm install`
+`npm install`  
+
 `bower install`
 
 Then:
@@ -32,4 +33,4 @@ Run `grunt serve` to run the app in the dev enviornment
 
 Run `grunt serve:dist` for the production enviorment
 
-These will load a basic demo page that should display examples of the different types of charts
+A basic demo page should load and display examples of the different types of supported charts
