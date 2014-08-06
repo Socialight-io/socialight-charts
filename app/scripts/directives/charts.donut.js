@@ -30,7 +30,7 @@ angular.module('socCharts')
 
                 scope.create = function() {
 
-                    if (scope.donutchart.length <= 0) {
+                    if (scope.donutchart && scope.donutchart.length <= 0) {
                         return false;
                     }
 
