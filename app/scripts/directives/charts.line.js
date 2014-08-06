@@ -66,6 +66,10 @@ angular.module('socCharts').directive('linechart', function() {
 
             scope.create = function() {
 
+                if (!scope.linechart || scope.linechart.length == 0) { 
+                    return false;
+                }
+                
                 var self = this,
                     featured = "v0";
 
