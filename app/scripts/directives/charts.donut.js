@@ -30,7 +30,7 @@ angular.module('socCharts')
 
                 scope.create = function() {
 
-                    if (!scope.donutchart || scope.donutchart.length <= 0) {
+                    if (!scope.donutchart || !scope.donutchart.length) {
                         return false;
                     }
 
@@ -64,7 +64,7 @@ angular.module('socCharts')
                         return v[scope.options.stack.key];
                     }));
 
-                    if (!scope.donutchart || scope.donutchart.length == 0 || !element.width()) {
+                    if (!scope.donutchart || !scope.donutchart.length || !element.width()) {
                         return false;
                     }
 
@@ -134,7 +134,7 @@ angular.module('socCharts')
                             .text(scope.options.stack.label);
                     }
 
-                    if (scope.data.length) {
+                    if (scope.data && scope.data.length) {
 
                         scope.arcs = scope.vis.selectAll("g.slice")
                             .data(scope.pie(scope.data))
