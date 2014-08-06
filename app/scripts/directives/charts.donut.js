@@ -34,6 +34,7 @@ angular.module('socCharts')
                         return false;
                     }
 
+
                     scope.options = angular.extend({
                         stack: {
                             key: "v1",
