@@ -186,8 +186,13 @@ angular.module('socCharts').directive('columnchart', function() {
                     return "translate(" + x(d.label) + ",0)";
                 });
 
-                bar.selectAll("rect").data(function(d) {
-                    return d.values;
+                var barRects = bar.selectAll("rect");
+                barRects.data(function(d) {
+                    if (d.values) {
+                        return d.values;
+                    } else {
+                        return [];
+                    }
                 }).enter().append("rect").attr("width", scope.options.timeseries ? barWidth : x.rangeBand()).attr("y", function(d) {
                     return y(d.y1);
                 }).attr("class", "over").attr("height", function(d) {
