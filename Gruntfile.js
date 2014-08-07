@@ -15,12 +15,17 @@ module.exports = function(grunt) {
     // html2js
     //grunt.loadNpmTasks('grunt-html2js');
 
+    // grunt replace
+    grunt.loadNpmTasks('grunt-include-replace');
+
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
     // Configurable paths for the application
+    var bower = require('./bower.json');
     var appConfig = {
-        app: require('./bower.json').appPath || 'app',
+        app: bower.appPath || 'app',
+        version: bower.version || '0.0.0',
         dist: 'dist'
     };
 
@@ -216,6 +221,19 @@ module.exports = function(grunt) {
                     '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
                 ]
+            }
+        },
+
+        // insert the app version number in the templateURL
+        includereplace: {
+            dist: {
+                options: {
+                    globals: {
+                        socChartsAppVersion: '<%= yeoman.version %>'
+                    }
+                },
+                src: '<%= yeoman.dist %>/{,*/}*.js',
+                dest: './'
             }
         },
 
@@ -452,7 +470,8 @@ module.exports = function(grunt) {
         'uglify',
         //'filerev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'includereplace'
         //'html2js'
     ]);
 

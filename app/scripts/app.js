@@ -7,7 +7,8 @@ if (!_SocChartsConfig) {
 
 // set the template URL
 // this expects @@analyticsAppVersion to be replaced by the build process (of the container app)
-_SocChartsConfig.templatePath = _SocChartsConfig.templatePath || "http://static.socialight.io/public/libs/publisher-analytics/@@analyticsAppVersion/bower_components/socialight-charts/dist/views/";
+_SocChartsConfig.templatePath = _SocChartsConfig.templatePath ||
+    "http://static.socialight.io/public/libs/socialight-charts/@@socChartsAppVersion/views/";
 
 
 /**
