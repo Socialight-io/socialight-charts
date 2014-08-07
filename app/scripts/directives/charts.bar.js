@@ -3,7 +3,7 @@
 angular.module('socCharts')
     .directive('barchart', function() {
         return {
-            templateUrl: _SocChartsConfig.path + 'charts/bar.html',
+            templateUrl: _SocChartsConfig.templatePath + 'charts/bar.html',
             restrict: 'A',
             scope: {
                 'barchart': '=',

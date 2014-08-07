@@ -5,7 +5,9 @@ if (!_SocChartsConfig) {
     var _SocChartsConfig = {};
 }
 
-_SocChartsConfig.path = _SocChartsConfig.path || "http://static.socialight.io/analytics/bower_components/socialight-charts/dist/views/"
+// set the template URL
+// this expects @@analyticsAppVersion to be replaced by the build process (of the container app)
+_SocChartsConfig.templatePath = _SocChartsConfig.templatePath || "http://static.socialight.io/public/libs/publisher-analytics/@@analyticsAppVersion/bower_components/socialight-charts/dist/views/";
 
 
 /**
@@ -26,7 +28,7 @@ angular
     .config(function($routeProvider, $sceDelegateProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: _SocChartsConfig.path + 'demo.html',
+                templateUrl: _SocChartsConfig.templatePath + 'demo.html',
                 controller: 'DemoCtrl'
             })
             .otherwise({
