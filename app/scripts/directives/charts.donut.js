@@ -26,7 +26,7 @@ angular.module('socCharts')
                     scope.update();
                 });
 
-                var si = d3.format('p');
+                var si = d3.format('.2p');
 
                 scope.create = function() {
 
