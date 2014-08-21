@@ -1,5 +1,7 @@
 <div ng-show="loading" class="animate-fade chart-loading"><i class="fa fa-3x fa-spin fa-spinner"></i></div>
 <div class="row" ng-show="!dataLength && !loading">
-    <h3>No data avalible</h3>
+    <div class="text-center">
+        <h3>No data avalible</h3>
+    </div>
 </div>
 <div ng-show="!loading && dataLength" class="animate-fade ng-hide chart"></div>
