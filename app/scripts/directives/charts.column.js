@@ -19,6 +19,7 @@ angular.module('socCharts').directive('columnchart', function() {
 
             scope.create = function() {
                 scope.data = scope.columnchart;
+                scope.dataLength = scope.columnchart.length;
                 scope.options = angular.extend({
                     label: "label",
                     stack: [{

@@ -57,10 +57,13 @@ angular.module('socCharts')
 
                 scope.create = function() {
 
+                    
                     if (!scope.barchart) {
                         return false;
                     }
 
+                    scope.dataLength = scope.barchart.length;
+                    
                     var self = this;
 
                     element.height(scope.options.height);

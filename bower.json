@@ -1,6 +1,6 @@
 {
     "name": "socialight-charts",
-    "version": "0.2.6",
+    "version": "0.2.7",
     "dependencies": {
         "angular": "1.2.16",
         "json3": "~3.3.1",
